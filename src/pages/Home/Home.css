@@ -1,0 +1,13 @@
+.home {
+    height: 85vh;
+    width: 100vw;
+
+    background-color: white;
+
+    
+    display: flex;
+    justify-content:space-around;
+    align-items:flex-start;
+
+    flex-wrap: wrap;
+}

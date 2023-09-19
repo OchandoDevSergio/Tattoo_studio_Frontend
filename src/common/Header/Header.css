@@ -1,0 +1,38 @@
+.header {
+    height: 15vh;
+    width: 100vw;
+
+    background-color:black;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.buttonClicker {
+
+    margin: 1em;
+
+    color: white;
+    font-weight: bold;
+
+    transition: 0.2s;
+    cursor: pointer;
+
+    display:flex;
+    justify-content: center;
+}
+
+.buttonClicker:hover {
+
+    transition: 0.2s;
+    color: rgb(198, 124, 71);
+}
+
+.homeButton {
+    height: 15vh;
+    width: 20vw;
+
+    transition: 0.2s;
+    cursor: pointer;
+}
