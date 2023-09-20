@@ -45,7 +45,7 @@ export const Header = () => {
               APPOINTMENTS
             </div>
             <div className="buttonClicker" onClick={() => navigate("/profile")}>
-              {reduxUserData.credentials?.userData?.userName}
+              {reduxUserData.credentials?.userData?.userName.toUpperCase()}
             </div>
             <div className="buttonClicker" onClick={() => logOut()}>
               LOG OUT
