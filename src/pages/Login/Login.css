@@ -1,20 +1,13 @@
 .login {
-    height: 85vh;
+    height: 80vh;
     width: 100vw;
 
     background-color: white;
-
-    
-    display: flex;
-    justify-content:space-around;
-    align-items:flex-start;
-
-    flex-wrap: wrap;
 }
 
 
 .upRowLogin {
-    height: 30vh;
+    height: 15vh;
 
 }
 

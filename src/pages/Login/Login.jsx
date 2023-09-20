@@ -64,23 +64,23 @@ export const Login = () => {
         {/* Este elemento pre nos sirve para renderizar en pantalla el valor del hook
         desde que se carga el componente, es una especie de utilidad para el desarrollador
         para que éste pueda comprobar el valor que tiene el hook y si está correctamente bindeado. */}
-        <div className="row upRowLogin"></div>
-        <div className="row middleRowLogin">
-          <Input
+          <div className="row upRowLogin"></div>
+          <div className="row middleRowLogin">
+            <Input
             type={"email"}
             placeholder="Introduce your e-mail"
             value={credentials.email}
             name={"email"}
             manejadora={inputHandler}
-          />
-          <Input
+            />
+            <Input
             type={"password"}
             placeholder="Introduce your password"
             value={credentials.password}
             name={"password"}
             manejadora={inputHandler}
-          />
-        </div>
+            />
+          </div>
         <div className="row downRowLogin">
           <div className="col"></div>
           <div className="col buttons">
