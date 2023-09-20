@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-//import userSlice from "../pages/userSlice";
+import userSlice from "../pages/userSlice";
 
 //storage es de redux-persist para que la información no se pierda en una eventual recarga
 import storage from "redux-persist/lib/storage";
@@ -10,7 +10,7 @@ import thunk from "redux-thunk";
 
 
 const reducers = combineReducers({
-  //user: userSlice,
+  user: userSlice,
 
 });
 

@@ -10,12 +10,15 @@ export const Header = () => {
 
           <img className="homeButton" src="https://i.ibb.co/0j326Sc/logo-5.jpg" alt="logo" onClick={() => navigate("/")}/>
 
-          <div className="loginRegisterDiv">
+          <div className="buttonsDiv">
+          <div className="buttonClicker" onClick={() => navigate("/tattoos")}>
+              TATTOOS
+            </div>
             <div className="buttonClicker" onClick={() => navigate("/login")}>
-              Login
+              LOGIN
             </div>
             <div className="buttonClicker" onClick={() => navigate("/register")} >
-              Register
+              REGISTER
             </div>
           </div>
         </div>

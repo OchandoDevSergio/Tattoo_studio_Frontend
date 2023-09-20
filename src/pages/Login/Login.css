@@ -1,0 +1,74 @@
+.login {
+    height: 85vh;
+    width: 100vw;
+
+    background-color: white;
+
+    
+    display: flex;
+    justify-content:space-around;
+    align-items:flex-start;
+
+    flex-wrap: wrap;
+}
+
+
+.upRowLogin {
+    height: 30vh;
+
+}
+
+.middleRowLogin {
+    height: 25vh;
+    display:flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.downRowLogin {
+    height: 30vh;
+
+    display:flex;
+    justify-content: center;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.messageBox {
+    display:flex;
+    justify-content: center;
+}
+
+.buttonBody {
+    width: 6vw;
+    margin: 1em;
+
+    color: black;
+    background-color: white;
+    font-weight: bold;
+
+    transition: 0.2s;
+    cursor: pointer;
+
+    display:flex;
+    justify-content: center;
+
+    border: solid steelblue;
+    border-radius:  10em;
+}
+
+.buttonBody:hover {
+
+    transition: 0.2s;
+    color: rgb(92, 89, 89);
+    background-color: whitesmoke;
+    
+}

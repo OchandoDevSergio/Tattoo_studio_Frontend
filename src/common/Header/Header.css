@@ -36,3 +36,8 @@
     transition: 0.2s;
     cursor: pointer;
 }
+
+.buttonsDiv {
+    display: flex;
+    flex-direction: row;
+}
