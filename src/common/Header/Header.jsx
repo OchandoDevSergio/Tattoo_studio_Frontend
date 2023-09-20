@@ -22,7 +22,7 @@ export const Header = () => {
       <div className="header">
 
           <img className="homeButton" src="https://i.ibb.co/0j326Sc/logo-5.jpg" alt="logo" onClick={() => navigate("/")}/>
-          
+          <div className="headerSpace"></div>
         {reduxUserData.credentials.token ? (
         <>
           <div className="buttonsDiv">

@@ -1,5 +1,5 @@
 .login {
-    height: 80vh;
+    height: 83vh;
     width: 100vw;
 
     background-color: white;
@@ -38,30 +38,31 @@
 .messageBox {
     display:flex;
     justify-content: center;
+    font-family: Cambria ;
+    font-size: large;
 }
 
 .buttonBody {
     width: 6vw;
     margin: 1em;
 
-    color: black;
-    background-color: white;
+    color: white;
+    background-color: rgb(198, 124, 71);
     font-weight: bold;
+
+    font-family: Cambria ;
 
     transition: 0.2s;
     cursor: pointer;
 
     display:flex;
     justify-content: center;
-
-    border: solid steelblue;
-    border-radius:  10em;
 }
 
 .buttonBody:hover {
 
     transition: 0.2s;
     color: rgb(92, 89, 89);
-    background-color: whitesmoke;
+    background-color:  rgb(198, 124, 71);
     
 }

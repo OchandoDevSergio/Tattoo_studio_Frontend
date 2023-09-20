@@ -1,5 +1,5 @@
 .header {
-    height: 15vh;
+    height: 12vh;
     width: 100vw;
 
     background-color:black;
@@ -9,12 +9,20 @@
     align-items: center;
 }
 
+.headerSpace {
+    height: 12vh;
+    width: 35vw;
+}
+
 .buttonClicker {
 
     margin: 1em;
 
     color: white;
     font-weight: bold;
+
+    font-size: large;
+    font-family: Cambria ;
 
     transition: 0.2s;
     cursor: pointer;
@@ -30,8 +38,8 @@
 }
 
 .homeButton {
-    height: 15vh;
-    width: 20vw;
+    height: 12vh;
+    width: 18vw;
 
     transition: 0.2s;
     cursor: pointer;
