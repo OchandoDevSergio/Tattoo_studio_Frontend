@@ -2,12 +2,20 @@
     height: 83vh;
     width: 100vw;
 
-    background-color: white;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 
-    
-    display: flex;
-    justify-content:space-around;
-    align-items:flex-start;
-
-    flex-wrap: wrap;
+    /* background-color: rgb(32, 32, 32); */
+    background-image:url(https://i.ibb.co/wBRSpSF/fondo2.jpg);
 }
+
+.carouselImg {
+    height: 70vh;
+    width: 70vw;
+    /* border-radius: 10% 10% 10% 10%; */
+    border: solid goldenrod;
+    border-radius:  1em;
+    
+}
+
