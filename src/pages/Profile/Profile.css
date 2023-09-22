@@ -1,0 +1,23 @@
+.profile {
+    height: 83vh;
+    width: 100vw;
+
+    /* background-color: white; */
+    background-image:url(https://i.ibb.co/wBRSpSF/fondo2.jpg);
+    color: white;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+.spaceUp {
+    height: 10vh;
+}
+
+.title {
+    font-family: Cambria ;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+}
+

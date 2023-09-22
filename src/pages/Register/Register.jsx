@@ -78,16 +78,6 @@ export const Register = () => {
           </div>
           <div className="row inputRow">
             <Input
-              type={"text"}
-              placeholder="Introduce your surnames"
-              value={registerBody.surnames}
-              name={"surnames"}
-              className="defaultInput"
-              manejadora={inputHandler}
-            />
-          </div>
-          <div className="row inputRow">
-            <Input
               type={"email"}
               placeholder="Introduce your e-mail"
               value={registerBody.email}
@@ -96,14 +86,24 @@ export const Register = () => {
               manejadora={inputHandler}
             />
           </div>
-        </div>
-        <div className="col-5">
           <div className="row inputRow">
             <Input
               type={"number"}
               placeholder="Introduce your phone number"
               value={registerBody.phone}
               name={"phone"}
+              className="defaultInput"
+              manejadora={inputHandler}
+            />
+          </div>
+        </div>
+        <div className="col-5">
+        <div className="row inputRow">
+            <Input
+              type={"text"}
+              placeholder="Introduce your surnames"
+              value={registerBody.surnames}
+              name={"surnames"}
               className="defaultInput"
               manejadora={inputHandler}
             />
