@@ -7,11 +7,11 @@ import { combineReducers } from "redux";
 import { persistReducer } from "redux-persist";
 
 import thunk from "redux-thunk";
-
+import designSlice from "../pages/designSlice";
 
 const reducers = combineReducers({
   user: userSlice,
-
+  design: designSlice,
 });
 
 const persistConfig = {

@@ -1,5 +1,21 @@
 import axios from "axios";
 
+export const bringDesigns = async () => {
+  return await axios.get(`http://localhost:5000/designs`);
+};
+
+export const registerDesign = async (newDesignBody, userData) => {
+  return axios.post(`http://localhost:5000/designs`, newDesignBody, {
+    headers: {
+      authorization: "Bearer " + userData.token,
+    },
+  });
+};
+
+export const searchCriteria = async (criteria) => {
+  return await axios.get(`http://localhost:5000/designs/${criteria}`);
+};
+
 export const loginUser = async (credentials) => {
   return await axios.post(`http://localhost:5000/auth/login`, credentials);
 };
