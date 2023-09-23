@@ -54,6 +54,10 @@ export const Header = () => {
       }
     }, [criteria]);
 
+    // useEffect(() => {
+    //   console.log("soy criteria", criteria);
+    // }, [criteria]);
+
     return (
       <div className="header">
 
