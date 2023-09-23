@@ -1,0 +1,40 @@
+
+.designDesign {
+    
+    margin: 0;
+    padding: 0;
+
+    height: 30vh;
+    width: 13vw;
+
+    background-color:lightblue;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+
+    border-radius: 5% 5% 5% 5%;
+    border: 0.1em solid black;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.designDesign:hover {
+
+    transition: 0.2s;
+    color: rgb(125, 121, 121);
+}
+
+.picture {
+    height: 20vh;
+    width: 12vw;
+
+    background-color: white;
+    border: 0.1em solid black;
+}

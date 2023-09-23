@@ -12,6 +12,8 @@
 .headerSpace {
     height: 12vh;
     width: 35vw;
+    justify-content: center;
+    align-items: center;
 }
 
 .buttonClicker {
