@@ -1,8 +1,11 @@
 import {useEffect, useState} from 'react';
 import { bringDesigns } from '../../services/apiCalls';
 import { DesignCard } from '../../common/DesignCard/DesignCard';
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { designDataCheck } from "../../pages/designSlice";
+import { Input } from "../../common/Input/Input";
+import { searchCriteria } from "../../services/apiCalls";
+import { loadDesignData } from "../../pages/designSlice";
 import './Tattoos.css'
 
 export const Tattoos = () => {
@@ -23,10 +26,56 @@ export const Tattoos = () => {
         }
     },[designs]);
 
+
+    const [criteria, setCriteria] = useState("");
+    const dispatch = useDispatch();
+    const searchDesigns = (designs) => {
+        dispatch(loadDesignData({ designData: designs }));
+      };
+  
+      const inputHandler = (e) => {
+        setCriteria(e.target.value);
+      };
+  
+      useEffect(() => {
+        //console.log("soy criteria", criteria);
+        if (criteria !== "") {
+          const search = setTimeout(() => {
+            searchCriteria(criteria)
+              .then((results) => {
+                searchDesigns(results);
+                console.log(results);
+              })
+              .catch((error) => console.log(error));
+          }, 375);
+    
+          return () => clearTimeout(search);
+        } else if (criteria == ""){
+          searchCriteria(criteria)
+          .then((results) => {
+            searchDesigns(results);})
+        }
+      }, [criteria]);
+
+    // useEffect(() => {
+    //   console.log("soy criteria", criteria);
+    // }, [criteria]);
+
+
 //Instanciamos Redux en modo lectura
   const rdxDesignData = useSelector(designDataCheck);
     return (
         <>
+        <div className='subHeader'>
+        <Input
+           type={"text"}
+           placeholder="Search tattoos"
+           value={criteria}
+           name={"criteria"}
+           className="defaultInput"
+           manejadora={inputHandler}
+          />
+        </div>
         {rdxDesignData.designData?.data?.data?.length > 0 
 
             ? (<div className='home'>

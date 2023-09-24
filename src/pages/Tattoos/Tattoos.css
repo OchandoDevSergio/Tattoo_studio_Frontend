@@ -1,0 +1,9 @@
+.subHeader {
+    height: 6vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    background-color: black;
+}
