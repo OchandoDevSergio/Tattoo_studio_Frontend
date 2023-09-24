@@ -12,6 +12,7 @@
 .headerSpace {
     height: 12vh;
     width: 35vw;
+    display:flex;
     justify-content: center;
     align-items: center;
 }

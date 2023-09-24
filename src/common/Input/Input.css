@@ -2,4 +2,5 @@
 .defaultInput {
     width: 20vw;
     border-radius: 10em;
+    border: solid goldenrod;
 }

@@ -14,6 +14,18 @@
     height: 10vh;
 }
 
+.upRowRegister {
+    height: 50vh;
+}
+
+.downRowRegister {
+    height: 10vh;
+
+    display:flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
 .title {
     font-family: Cambria ;
     justify-content: center;
