@@ -9,9 +9,12 @@ import { persistReducer } from "redux-persist";
 import thunk from "redux-thunk";
 import designSlice from "../pages/designSlice";
 
+//import paymentSlice from "../pages/paymentSlice";
+
 const reducers = combineReducers({
   user: userSlice,
   design: designSlice,
+  // payment: paymentSlice,
 });
 
 const persistConfig = {

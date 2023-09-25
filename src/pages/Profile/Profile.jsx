@@ -39,6 +39,12 @@ export const Profile = () => {
   const [password2, setPassword2] = useState({
     password_repeat: "",
   });
+  //Código para traer los datos de pago
+  // const [customerId, setcustomerId] = useState("");
+  // setcustomerId(reduxUserData?.credentials?.userData?.userId);
+  //     useEffect(() => {
+  //     console.log("soy customerId", customerId);
+  //   }, [customerId]);
 
   //BINDEO
   const inputHandler = (e) => {
