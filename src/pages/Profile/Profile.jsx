@@ -127,6 +127,8 @@ export const Profile = () => {
     }
   }, [datosReduxUser]);
 
+console.log("el lenght", reduxPaymentData.paymentDataData.data.data.length)
+
   return (
     <div className="container-fluid profile">
         <div className="row spaceUp"/>
@@ -221,8 +223,32 @@ export const Profile = () => {
       </div>
       <div className="row downRowRegister">
         <div className="buttonBody" onClick={() => modifyMe()}>
-          Modify
+          Modify user data
         </div>
+      </div>
+      {(reduxPaymentData.paymentDataData.data.data.length !==1) ? (
+            <>
+            {reduxUserData.credentials.userData.roleId === 2 && (
+              <div className="row downRowPayment">
+                <div className="buttonBody" onClick={() => navigate("/paymentadd")}>
+                 Add payment data
+                </div>
+              </div>
+               )}
+              </>
+      ) : (
+        <>
+            {reduxUserData.credentials.userData.roleId === 2 && (
+              <div className="row downRowPayment">
+                <div className="buttonBody" onClick={() => navigate("/paymentmodify")}>
+                 Modify payment data
+                </div>
+              </div>
+               )}
+        </>
+        )}
+
+      <div className="row downRowRegister">
       </div>
     </div>
   );

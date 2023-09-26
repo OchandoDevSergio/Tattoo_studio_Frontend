@@ -19,7 +19,15 @@
 }
 
 .downRowRegister {
-    height: 10vh;
+    height: 5vh;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.downRowPayment {
+    height: 5vh;
 
     display:flex;
     justify-content: center;
@@ -33,3 +41,28 @@
     font-size: large;
 }
 
+.buttonBody {
+    width: 13vw;
+    margin: 1em;
+
+    color: white;
+    background-color: rgb(198, 124, 71);
+    font-weight: bold;
+
+    font-family: Cambria ;
+
+    transition: 0.2s;
+    cursor: pointer;
+    border-radius: 0.3em;
+
+    display:flex;
+    justify-content: center;
+}
+
+.buttonBody:hover {
+
+    transition: 0.2s;
+    /* background-color: goldenrod; */
+    color:black;
+    
+}
