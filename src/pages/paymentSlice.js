@@ -17,6 +17,6 @@ export const paymentSlice = createSlice({
 
 export const { loadPaymentData } = paymentSlice.actions;
 
-export const paymentDataCheck = (state) => state.design;
+export const paymentDataCheck = (state) => state.payment;
 
 export default paymentSlice.reducer;

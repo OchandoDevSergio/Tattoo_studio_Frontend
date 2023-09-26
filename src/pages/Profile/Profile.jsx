@@ -8,11 +8,14 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { userDataCheck, changeUser } from "../userSlice";
 import { useNavigate } from "react-router-dom";
+import { searchCustomerPayment } from "../../services/apiCalls";
+import { loadPaymentData, paymentDataCheck } from "../../pages/paymentSlice";
+
 
 export const Profile = () => {
   //Instanciamos REDUX en modo lectura
   const reduxUserData = useSelector(userDataCheck);
-
+  
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
@@ -39,12 +42,37 @@ export const Profile = () => {
   const [password2, setPassword2] = useState({
     password_repeat: "",
   });
+
   //Código para traer los datos de pago
-  // const [customerId, setcustomerId] = useState("");
-  // setcustomerId(reduxUserData?.credentials?.userData?.userId);
-  //     useEffect(() => {
-  //     console.log("soy customerId", customerId);
-  //   }, [customerId]);
+  const [customerId, setcustomerId] = useState(reduxUserData?.credentials?.userData?.userId);
+      useEffect(() => {
+      console.log("soy customerId", customerId);
+    }, [customerId]);
+
+    const searchPaymentData = (paymentDatas) => {
+      dispatch(loadPaymentData({ paymentDataData: paymentDatas }));
+    };
+
+
+
+    // useEffect(() => {
+      const tokenPayment = reduxUserData.credentials.token;
+      //console.log("soy tokenPayment", tokenPayment);
+  //  }, [reduxUserData]);
+
+   useEffect(() => {
+    searchCustomerPayment(customerId, tokenPayment)
+    .then((results) => {
+      searchPaymentData(results);
+    })
+  }, [customerId]);
+
+    const reduxPaymentData = useSelector(paymentDataCheck);
+
+    useEffect(() => {
+       console.log("soy reduxPaymentData", reduxPaymentData)
+    }, [reduxPaymentData]);
+    
 
   //BINDEO
   const inputHandler = (e) => {
@@ -83,6 +111,8 @@ export const Profile = () => {
       console.log("los passwords no coinciden");
     }
   };
+
+  
 
   //Inicializamos o instanciamos REDUX en modo lectura
   const datosReduxUser = useSelector(userDataCheck);

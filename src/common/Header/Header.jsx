@@ -16,6 +16,10 @@ export const Header = () => {
     //Instanciamos Redux en modo ESCRITURA
     const dispatch = useDispatch();
 
+    useEffect(() => {
+console.log("soy reduxUserData en header", reduxUserData);
+    }, [reduxUserData]);
+
     const logOut = () => {
       dispatch(userout({ credentials: {} }));
       navigate("/");
