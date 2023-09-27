@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { userDataCheck, userout } from "../../pages/userSlice";
 import { useEffect, useState } from "react";
-import { Input } from "../Input/Input";
-import { searchCriteria } from "../../services/apiCalls";
-import { loadDesignData } from "../../pages/designSlice";
+// import { Input } from "../Input/Input";
+// import { searchCriteria } from "../../services/apiCalls";
+// import { loadDesignData } from "../../pages/designSlice";
 
 export const Header = () => {
     //Instanciamos useNavigate dentro de navigate para poder navegar

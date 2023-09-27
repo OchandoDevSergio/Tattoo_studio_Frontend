@@ -127,7 +127,7 @@ export const Profile = () => {
     }
   }, [datosReduxUser]);
 
-console.log("el lenght", reduxPaymentData.paymentDataData.data.data.length)
+console.log("el lenght", reduxPaymentData.paymentDataData?.data?.data?.length)
 
   return (
     <div className="container-fluid profile">
@@ -226,7 +226,7 @@ console.log("el lenght", reduxPaymentData.paymentDataData.data.data.length)
           Modify user data
         </div>
       </div>
-      {(reduxPaymentData.paymentDataData.data.data.length !==1) ? (
+      {(reduxPaymentData.paymentDataData?.data?.data.length !== 1 ) ? (
             <>
             {reduxUserData.credentials.userData.roleId === 2 && (
               <div className="row downRowPayment">
@@ -238,7 +238,7 @@ console.log("el lenght", reduxPaymentData.paymentDataData.data.data.length)
               </>
       ) : (
         <>
-            {reduxUserData.credentials.userData.roleId === 2 && (
+            {reduxUserData.credentials?.userData?.roleId === 2 && (
               <div className="row downRowPayment">
                 <div className="buttonBody" onClick={() => navigate("/paymentmodify")}>
                  Modify payment data

@@ -12,10 +12,17 @@ export const paymentSlice = createSlice({
         ...action.payload,
       };
     },
+    changePaymentData: (state, action) => {
+      return {
+        ...state,
+        ...action.payload,
+      };
+    },
   },
 });
 
 export const { loadPaymentData } = paymentSlice.actions;
+export const { changePaymentData } = paymentSlice.actions;
 
 export const paymentDataCheck = (state) => state.payment;
 

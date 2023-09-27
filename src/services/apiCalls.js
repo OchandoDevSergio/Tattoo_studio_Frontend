@@ -16,14 +16,19 @@ export const searchCriteria = async (criteria) => {
   return await axios.get(`http://localhost:5000/designs/${criteria}`);
 };
 
-// export const searchCustomerPayment = async (customerId) => {
-//   return await axios.get(`http://localhost:5000/paymentdatas/${customerId}`);
-// };
 export const searchCustomerPayment = async (customerId, tokenPayment) => {
   return await axios.get(`http://localhost:5000/paymentdatas/${customerId}`, {
     headers: {
       authorization: "Bearer " + tokenPayment,
     },});
+};
+
+export const modifyPaymentData = async (modifyPaymentDataBody, tokenPayment) => {
+  return axios.put(`http://localhost:5000/users`, modifyPaymentDataBody, {
+    headers: {
+      authorization: "Bearer " + tokenPayment,
+    },
+  });
 };
 
 export const loginUser = async (credentials) => {
