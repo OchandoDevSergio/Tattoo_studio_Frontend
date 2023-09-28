@@ -11,59 +11,60 @@ import './Tattoos.css'
 export const Tattoos = () => {
     const [designs, setDesigns] = useState([]);
 
-    useEffect(()=>{
+    // useEffect(()=>{
         
-        if(designs.length === 0){
-            bringDesigns()
-            .then(
-                resultado => {
-                        setDesigns(resultado.data.data);
-                    }
-                )
-                .catch(error => console.log(error));
-        } else {
-            console.log(designs);
-        }
-    },[designs]);
+    //     if(designs.length === 0){
+    //         bringDesigns()
+    //         .then(
+    //             resultado => {
+    //                     setDesigns(resultado.data.data);
+    //                 }
+    //             )
+    //             .catch(error => console.log(error));
+    //     } else {
+    //         console.log(designs);
+    //     }
+    // },[designs]);
 
 
     const [criteria, setCriteria] = useState("");
     const dispatch = useDispatch();
-    const searchDesigns = (designs) => {
-        dispatch(loadDesignData({ designData: designs }));
-      };
+    // const searchDesigns = (designs) => {
+    //     dispatch(loadDesignData({ designData: designs }));
+    //   };
   
       const inputHandler = (e) => {
         setCriteria(e.target.value);
       };
   
       useEffect(() => {
-        //console.log("soy criteria", criteria);
         if (criteria !== "") {
           const search = setTimeout(() => {
             searchCriteria(criteria)
               .then((results) => {
-                searchDesigns(results);
-                console.log(results);
+                console.log("do you comprende??", results)
+                // setDesigns(results);
               })
               .catch((error) => console.log(error));
           }, 375);
     
           return () => clearTimeout(search);
-        } else if (criteria == ""){
-          searchCriteria(criteria)
-          .then((results) => {
-            searchDesigns(results);})
+        } else if (criteria === ""){
+          
+          bringDesigns()
+            .then(
+              resultado => {
+                console.log(resultado)
+              }
+            )
+            .catch(error => console.log(error))
+         
         }
       }, [criteria]);
 
-    // useEffect(() => {
-    //   console.log("soy criteria", criteria);
-    // }, [criteria]);
-
-
 //Instanciamos Redux en modo lectura
   const rdxDesignData = useSelector(designDataCheck);
+  
     return (
         <>
         <div className='subHeader'>

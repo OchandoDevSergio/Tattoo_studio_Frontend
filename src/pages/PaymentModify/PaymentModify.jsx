@@ -24,7 +24,7 @@ console.log ("soy reduxPaymentData en paymentmodify", reduxPaymentData);
     id: reduxPaymentData.paymentDataData?.data?.data?.id,
     cardNumber: reduxPaymentData.paymentDataData?.data?.data?.cardNumber,
     validThru: reduxPaymentData.paymentDataData?.data?.data?.validThru,
-    user_id: reduxPaymentData.paymentDataData?.data?.data?.UserId,
+    user_id: reduxPaymentData.paymentDataData?.data?.data?.user_id,
   });
 
  //console.log("soy validthru", reduxPaymentData.paymentDataData.data.data);
@@ -45,18 +45,27 @@ console.log ("soy reduxPaymentData en paymentmodify", reduxPaymentData);
   const tokenPayment = reduxUserData.credentials.token;
 
   const modifyThisPaymentData = () => {
+    // if (modifyPaymentDataBody[check] === "") {
+    //   //Al encontrar un string vacío no dejo continuar, remito al return
+    //   return;
+    // }
+
     modifyPaymentData(modifyPaymentDataBody, tokenPayment)
     .then((resultado) => {
       const newPaymentDataData = {
-        paymentDataData: resultado.data.data,
+        paymentDataData: resultado.data,
       };
 
       dispatch(changePaymentData({ paymentDataData: newPaymentDataData }));
       console.log("soy paymentdatadata al final de modify", reduxPaymentData.paymentDataData)
-      //navigate("/");
+      navigate("/profile");
     })
     .catch((error) => console.log(error));
   }
+
+  useEffect(() => {
+    console.log("soy modifyPaymentDataBody", modifyPaymentDataBody);
+  }, [modifyPaymentDataBody]);
 
     return (
         <div className="container-fluid profile">

@@ -112,7 +112,9 @@ export const Profile = () => {
     }
   };
 
-  
+  // useEffect(() => {
+  //   console.log("soy reduxUserData en profile", reduxUserData);
+  // }, [reduxUserData]);
 
   //Inicializamos o instanciamos REDUX en modo lectura
   const datosReduxUser = useSelector(userDataCheck);
@@ -127,7 +129,7 @@ export const Profile = () => {
     }
   }, [datosReduxUser]);
 
-console.log("el lenght", reduxPaymentData.paymentDataData?.data?.data?.length)
+//console.log("el lenght", reduxPaymentData.paymentDataData?.data?.data?.length)
 
   return (
     <div className="container-fluid profile">
@@ -226,7 +228,7 @@ console.log("el lenght", reduxPaymentData.paymentDataData?.data?.data?.length)
           Modify user data
         </div>
       </div>
-      {(reduxPaymentData.paymentDataData?.data?.data.length !== 1 ) ? (
+      {(reduxPaymentData.paymentDataData?.data?.data == null ) ? (
             <>
             {reduxUserData.credentials.userData.roleId === 2 && (
               <div className="row downRowPayment">

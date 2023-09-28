@@ -24,7 +24,7 @@ export const searchCustomerPayment = async (customerId, tokenPayment) => {
 };
 
 export const modifyPaymentData = async (modifyPaymentDataBody, tokenPayment) => {
-  return axios.put(`http://localhost:5000/users`, modifyPaymentDataBody, {
+  return axios.put(`http://localhost:5000/paymentdatas`, modifyPaymentDataBody, {
     headers: {
       authorization: "Bearer " + tokenPayment,
     },
