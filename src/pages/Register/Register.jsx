@@ -39,14 +39,12 @@ export const Register = () => {
       registerUser(registerBody)
         .then((resultado) => {
           console.log(resultado);
+          navigate("/");
         })
         .catch((error) => console.log(error));
     } else {
       console.log("los passwords no coinciden");
     }
-
-
-
     };
 
   const datosReduxUser = useSelector(userDataCheck);
