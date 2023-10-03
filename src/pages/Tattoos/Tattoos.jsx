@@ -2,30 +2,14 @@ import {useEffect, useState} from 'react';
 import { bringDesigns } from '../../services/apiCalls';
 import { DesignCard } from '../../common/DesignCard/DesignCard';
 import { useSelector, useDispatch } from "react-redux";
-import { designDataCheck } from "../../pages/designSlice";
+//import { designDataCheck } from "../../pages/designSlice";
 import { Input } from "../../common/Input/Input";
 import { searchCriteria } from "../../services/apiCalls";
-import { loadDesignData } from "../../pages/designSlice";
+//import { loadDesignData } from "../../pages/designSlice";
 import './Tattoos.css'
 
 export const Tattoos = () => {
     const [designs, setDesigns] = useState([]);
-
-    // useEffect(()=>{
-        
-    //     if(designs.length === 0){
-    //         bringDesigns()
-    //         .then(
-    //             resultado => {
-    //                     setDesigns(resultado.data.data);
-    //                 }
-    //             )
-    //             .catch(error => console.log(error));
-    //     } else {
-    //         console.log(designs);
-    //     }
-    // },[designs]);
-
 
     const [criteria, setCriteria] = useState("");
     const dispatch = useDispatch();
@@ -60,9 +44,6 @@ export const Tattoos = () => {
          
         }
       }, [criteria]);
-
-//Instanciamos Redux en modo lectura
-  // const rdxDesignData = useSelector(designDataCheck);
   
     return (
         <>
@@ -129,7 +110,9 @@ export const Tattoos = () => {
 
                 </div>)
 
-                : (<div>data is coming</div>)
+                : (<div className='home'>
+                  <div className='title'>No designs found, insert a tattoo style</div>
+                  </div>)
             )}
         </>
     )
