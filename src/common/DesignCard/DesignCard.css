@@ -7,7 +7,8 @@
     height: 30vh;
     width: 13vw;
 
-    background-color:goldenrod;
+    /* background-color:goldenrod; */
+    background-color: black;
     color: white;
 
     display: flex;
@@ -26,10 +27,12 @@
     cursor: pointer;
 }
 
-.designDesign:hover {
+.cardDesign:hover {
 
     transition: 0.2s;
-    color: rgb(125, 121, 121);
+    /* background-color: black; */
+    background-color:goldenrod;
+    border: 0.1em solid black;
 }
 
 .picture {
@@ -51,7 +54,6 @@
 .modal-design {
     height:100vh;
     width: 80vw;
-    /* background-color: goldenrod; */
     color: white;
     display:flex;
     justify-content: center;
@@ -62,9 +64,6 @@
     height: 10vh;
     width: 56.5vw;
     background-color: black;
-    /* display:flex;
-    align-items: center;
-    justify-content: space-between; */
 }
 
 .modal-design-body {
