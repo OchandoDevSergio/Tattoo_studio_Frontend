@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loadDesignData } from "../../pages/designSlice";
 
-export const DesignCard = ({ id, artist_id, style, picture, design }) => {
+export const DesignCard = ({ id, artist_name, style, picture, design }) => {
   //Instancia de Redux para el modo de ESCRITURA
   const dispatch = useDispatch();
   //Instancia de Navigate para React Router Dom y movimientos por la app
@@ -18,7 +18,7 @@ export const DesignCard = ({ id, artist_id, style, picture, design }) => {
 
   return (
     <div className="cardDesign" onClick={() => showMe(design)}>
-       artist_id:{artist_id}  {/*cambiar por nombre */}
+       Artist: {artist_name}  {/*cambiar por nombre */}
       <img className="picture" src={picture} alt={id} />
       <div>Style: {style}</div>
     </div>

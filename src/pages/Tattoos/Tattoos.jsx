@@ -42,8 +42,7 @@ export const Tattoos = () => {
           const search = setTimeout(() => {
             searchCriteria(criteria)
               .then((results) => {
-                console.log("do you comprende??", results)
-                // setDesigns(results);
+                setDesigns(results.data.data);
               })
               .catch((error) => console.log(error));
           }, 375);
@@ -54,7 +53,7 @@ export const Tattoos = () => {
           bringDesigns()
             .then(
               resultado => {
-                console.log(resultado)
+                setDesigns(resultado.data.data)
               }
             )
             .catch(error => console.log(error))
@@ -63,7 +62,7 @@ export const Tattoos = () => {
       }, [criteria]);
 
 //Instanciamos Redux en modo lectura
-  const rdxDesignData = useSelector(designDataCheck);
+  // const rdxDesignData = useSelector(designDataCheck);
   
     return (
         <>
@@ -77,12 +76,12 @@ export const Tattoos = () => {
            manejadora={inputHandler}
           />
         </div>
-        {rdxDesignData.designData?.data?.data?.length > 0 
+        {designs.length > 0 
 
             ? (<div className='home'>
             <div className='row spaceRow'></div>
 
-              {rdxDesignData.designData.data.data.map(
+              {designs.map(
                  design => {
                      return (
                          <DesignCard
@@ -91,7 +90,7 @@ export const Tattoos = () => {
                              key={design.id}
                              ////////////////////////////////
                              id={design.id}
-                             artist_id={design.artist_id}
+                             artist_name={design.Artist.name}
                              style={design.style}
                              picture={design.picture}
                              design={design}

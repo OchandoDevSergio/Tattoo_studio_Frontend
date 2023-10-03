@@ -11,7 +11,7 @@ export const Header = () => {
     //Instanciamos useNavigate dentro de navigate para poder navegar
     const navigate = useNavigate();
 
-    //Instanciamos Redux en modo lectura
+    //Instanciamos Redux en modo LECTURA
     const reduxUserData = useSelector(userDataCheck);
     //Instanciamos Redux en modo ESCRITURA
     const dispatch = useDispatch();
@@ -41,7 +41,6 @@ console.log("soy reduxUserData en header", reduxUserData);
               </div>
             )}
           {reduxUserData.credentials.userData.roleId === 3 && (
-              //Este && haría referencia a un entonces
               <div className="buttonClicker" onClick={() => navigate("/portfolio")}>
                 PORTFOLIO
               </div>
