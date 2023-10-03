@@ -33,13 +33,16 @@ export const DesignCard = ({ id, artist_name, style, picture, design }) => {
       <Modal
       show={show}
       onHide={() => setShow(false)}
-      dialogClassName="modal-90w"
+      className="modal-design"
       aria-labelledby="example-custom-modal-styling-title"
       >
-      <Modal.Body>
-      Artist: {artist_name}
-      Style: {style}
-      <img className="picture" src={picture} alt={id} />
+      <Modal.Header closeButton className="modal-design-header">
+      <Modal.Title>Artist: {artist_name}</Modal.Title>
+      <Modal.Title className="spacer"></Modal.Title>
+      <Modal.Title>Style: {style}</Modal.Title>
+      </Modal.Header>
+      <Modal.Body className="modal-design-body">
+      <img className="modalPicture" src={picture} alt={id} />
       </Modal.Body>
       </Modal>
     </div>

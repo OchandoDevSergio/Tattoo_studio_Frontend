@@ -39,3 +39,45 @@
     background-color: white;
     border: 0.1em solid black;
 }
+
+.modalPicture {
+    height: 77vh;
+    width: 55vw;
+
+    background-color: white;
+    border: 0.1em solid black;
+}
+
+.modal-design {
+    height:100vh;
+    width: 80vw;
+    /* background-color: goldenrod; */
+    color: white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-design-header {
+    height: 10vh;
+    width: 56.5vw;
+    background-color: black;
+    /* display:flex;
+    align-items: center;
+    justify-content: space-between; */
+}
+
+.modal-design-body {
+    height: 80vh;
+    width: 56.5vw;
+    background-color: black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spacer {
+    height: 1vh;
+    width: 3vw;
+    /* background-color: blue; */
+}
