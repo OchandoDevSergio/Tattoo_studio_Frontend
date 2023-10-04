@@ -1,0 +1,138 @@
+
+.cardDesign {
+    
+    margin: 0;
+    padding: 0;
+
+    height: 23vh;
+    width: 13vw;
+
+    /* background-color:goldenrod; */
+    background-color: black;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+
+    border-radius: 5% 5% 5% 5%;
+    border: 0.1em solid black;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.cardDesign:hover {
+
+    transition: 0.2s;
+    /* background-color: black; */
+    background-color:goldenrod;
+    border: 0.1em solid black;
+}
+
+.picture {
+    height: 20vh;
+    width: 12vw;
+
+    background-color: white;
+    border: 0.1em solid black;
+}
+
+.modalPicture {
+    height: 67vh;
+    width: 50vw;
+
+    border: 0.1em solid black;
+}
+
+.modal-design {
+    height:100vh;
+    width: 80vw;
+    color: white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-design-header {
+    height: 13vh;
+    width: 56.5vw;
+    background-color: black;
+    flex-direction: column;
+}
+
+.modal-design-body {
+    height: 70vh;
+    width: 56.5vw;
+    background-color: black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-design-footer {
+    height: 9vh;
+    width: 56.5vw;
+    background-color: black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalConfirm-design-header {
+    height: 10vh;
+    width: 56.5vw;
+    background-color: black;
+}
+
+.modalConfirm-design-body {
+    height: 20vh;
+    width: 56.5vw;
+    background-color: black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalConfirm-design-footer {
+    height: 10vh;
+    width: 56.5vw;
+    background-color: black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spacer {
+    height: 1vh;
+    width: 10vw;
+    /* background-color: blue; */
+}
+
+.modalButton {
+
+    margin: 1em;
+
+    color: white;
+    font-weight: bold;
+
+    font-size: large;
+    font-family: Cambria ;
+
+    transition: 0.2s;
+    cursor: pointer;
+
+    display:flex;
+    justify-content: center;
+}
+
+.modalButton:hover {
+
+    transition: 0.2s;
+    color: rgb(198, 124, 71);
+}

@@ -62,3 +62,11 @@ export const modifyUser = async (modifyUserBody, userData) => {
     },
   });
 };
+
+export const deleteTattoo= async (designId, userData) => {
+  return axios.delete(`http://localhost:5000/designs`, designId, {
+    headers: {
+      authorization: "Bearer " + userData.token,
+    },
+  });
+};

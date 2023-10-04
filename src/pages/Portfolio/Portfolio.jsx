@@ -2,7 +2,8 @@ import './Portfolio.css'
 import { useSelector } from "react-redux";
 import { userDataCheck } from "../userSlice";
 import { searchPortfolio } from "../../services/apiCalls";
-import { DesignCard } from '../../common/DesignCard/DesignCard';
+// import { DesignCard } from '../../common/DesignCard/DesignCard';
+import { PortfolioCard } from '../../common/PortfolioCard/PortfolioCard';
 import { useEffect, useState } from 'react';
 
 
@@ -27,15 +28,12 @@ export const Portfolio = () => {
     console.log("soy designs", designs);
   }, [userId]);
 
-
-
-
     return (
         <>
         <div className='subHeader'>
-          <div>{reduxUserData.credentials.userData.userName} portfolio</div>
-          <div className="subheaderSpace"></div>
-          <div>Add tattoo design</div>
+          <div className='portfolioName'>{reduxUserData.credentials.userData.userName.toUpperCase()} PORTFOLIO</div>
+          {/* <div className="subheaderSpace"></div> */}
+          <div className='subheaderButton'>ADD TATTOO DESIGN</div>
         </div>
                 {designs.length > 0 
 
@@ -45,13 +43,12 @@ export const Portfolio = () => {
                       {designs.map(
                          design => {
                              return (
-                                 <DesignCard
+                                 <PortfolioCard
                                  
                                      // Key es una palabra reservada en React
                                      key={design.id}
                                      ////////////////////////////////
                                      id={design.id}
-                                     style={design.style}
                                      picture={design.picture}
                                      design={design}
                                  />
@@ -62,7 +59,7 @@ export const Portfolio = () => {
                  </div>
         
                  ) : (<div className='home'>
-                          <div className='title'>No designs found, insert a tattoo style</div>
+                          <div className='title'>No designs found, load designs to your portfolio</div>
                           </div>)
                     }
         </>

@@ -3,13 +3,50 @@
     width: 100vw;
 
     display: flex;
-    justify-content: center;
-    align-items: baseline;
+    justify-content: space-around;
+    align-items: center;
     background-color: black;
     color: white;
 }
 
 .subheaderSpace {
     height: 1vh;
-    width: 10vw;
+    width: 17vw;
+}
+
+.portfolioName {
+
+    margin: 1em;
+
+    color: white;
+    font-weight: bold;
+
+    font-size: large;
+    font-family: Cambria ;
+
+    display:flex;
+    justify-content: center;
+}
+
+.subheaderButton {
+
+    margin: 1em;
+
+    color: white;
+    font-weight: bold;
+
+    font-size: large;
+    font-family: Cambria ;
+
+    transition: 0.2s;
+    cursor: pointer;
+
+    display:flex;
+    justify-content: center;
+}
+
+.subheaderButton:hover {
+
+    transition: 0.2s;
+    color: rgb(198, 124, 71);
 }
