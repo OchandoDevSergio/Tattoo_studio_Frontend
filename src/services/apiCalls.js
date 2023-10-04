@@ -16,6 +16,14 @@ export const searchCriteria = async (criteria) => {
   return await axios.get(`http://localhost:5000/designs/${criteria}`);
 };
 
+export const searchPortfolio = async (userId, userData) => {
+  return await axios.get(`http://localhost:5000/artists/${userId}`, {
+    headers: {
+      authorization: "Bearer " + userData.token,
+    },
+  });
+};
+
 export const createNewPaymentData = async (registerPaymentBody, userData) => {
   return axios.post(`http://localhost:5000/paymentdatas`, registerPaymentBody, {
     headers: {
