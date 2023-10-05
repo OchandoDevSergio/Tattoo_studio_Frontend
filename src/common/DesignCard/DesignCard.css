@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
 
-    height: 30vh;
+    height: 35vh;
     width: 13vw;
 
     /* background-color:goldenrod; */
@@ -36,7 +36,7 @@
 }
 
 .picture {
-    height: 20vh;
+    height: 18vh;
     width: 12vw;
 
     background-color: white;

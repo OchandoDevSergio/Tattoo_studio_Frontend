@@ -7,6 +7,7 @@ import { Tattoos } from "../Tattoos/Tattoos";
 import { PaymentAdd } from "../PaymentAdd/PaymentAdd";
 import { PaymentModify } from "../PaymentModify/PaymentModify";
 import { Portfolio} from "../Portfolio/Portfolio";
+import { DesignAdd} from "../DesignAdd/DesignAdd";
 
 export const Body = () => {
   return (
@@ -20,6 +21,7 @@ export const Body = () => {
         <Route path="/paymentadd" element={<PaymentAdd />} />
         <Route path="/paymentmodify" element={<PaymentModify />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/designadd" element={<DesignAdd />} />
       </Routes>
     </>
   );

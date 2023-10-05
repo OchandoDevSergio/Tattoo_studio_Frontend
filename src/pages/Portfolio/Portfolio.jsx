@@ -5,7 +5,7 @@ import { searchPortfolio } from "../../services/apiCalls";
 // import { DesignCard } from '../../common/DesignCard/DesignCard';
 import { PortfolioCard } from '../../common/PortfolioCard/PortfolioCard';
 import { useEffect, useState } from 'react';
-
+import { useNavigate } from "react-router-dom";
 
 export const Portfolio = () => {
   //Instanciamos REDUX en modo lectura para los users
@@ -13,6 +13,7 @@ export const Portfolio = () => {
   const userId = reduxUserData.credentials.userData.userId;
   const [designs, setDesigns] = useState([]);
   const [artist, setArtist] = useState([]);
+  const navigate = useNavigate();
 
   console.log("soy userId", userId);
 
@@ -33,7 +34,7 @@ export const Portfolio = () => {
         <div className='subHeader'>
           <div className='portfolioName'>{reduxUserData.credentials.userData.userName.toUpperCase()} PORTFOLIO</div>
           {/* <div className="subheaderSpace"></div> */}
-          <div className='subheaderButton'>ADD TATTOO DESIGN</div>
+          <div className='subheaderButton' onClick={() => navigate("/designadd")}>ADD TATTOO DESIGN</div>
         </div>
                 {designs.length > 0 
 
