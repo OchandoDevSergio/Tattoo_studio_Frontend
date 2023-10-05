@@ -2,7 +2,6 @@ import './DesignAdd.css'
 import { Input } from "../../common/Input/Input";
 import { useState, useEffect } from "react";
 import { userDataCheck } from "../userSlice";
-//import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { searchPortfolio } from "../../services/apiCalls";
@@ -19,13 +18,12 @@ export const DesignAdd = () => {
     searchPortfolio(userId, reduxUserData.credentials)
       .then((results) => {
 
-
-      setArtist(results.data.data[0].id);
-      console.log("soy artist", artist);
+      setArtist(() => (
+        results.data.data[0].id
+      ));
     })
   }, [userId]);
 
-  console.log("soy artist", artist);
 
   const [addDesignBody, setaddDesignBody] = useState({
     artist_id: artist,
@@ -33,16 +31,17 @@ export const DesignAdd = () => {
     picture: "",
   });
 
-
   //BINDEO
   const inputHandler = (e) => {
     setaddDesignBody((prevState) => ({
       ...prevState,
+      artist_id: artist,
       [e.target.name]: e.target.value,
     }));
   };
 
   const addDesign = () => {
+    console.log("soy addDesignBody", addDesignBody);
     registerDesign(addDesignBody, reduxUserData.credentials)
         .then((resultado) => {
           navigate("/portfolio");
