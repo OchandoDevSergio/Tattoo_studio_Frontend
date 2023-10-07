@@ -10,7 +10,7 @@ export const Appointments = () => {
         <>
         {reduxUserData.credentials.userData.roleId !== 3 && (
           <div className='subHeader'>
-          <div className='subheaderButton' onClick={() => navigate("/designadd")}>Make Appointment</div>
+          <div className='subheaderButton' onClick={() => navigate("/appointmentadd")}>Make Appointment</div>
           </div>
         )}
 
