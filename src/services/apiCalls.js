@@ -4,6 +4,14 @@ export const bringDesigns = async () => {
   return await axios.get(`http://localhost:5000/designs`);
 };
 
+export const bringAllAppointments = async (userData) => {
+  return await axios.get(`http://localhost:5000/appointments`, {
+    headers: {
+      authorization: "Bearer " + userData.token,
+    },
+  });
+};
+
 export const registerDesign = async (newDesignBody, userData) => {
   return axios.post(`http://localhost:5000/designs`, newDesignBody, {
     headers: {

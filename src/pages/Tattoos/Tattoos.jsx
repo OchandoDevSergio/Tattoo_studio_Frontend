@@ -79,7 +79,7 @@ export const Tattoos = () => {
          </div>
 
          )
-
+//mirar si a partir de aquí he puesto dos veces el mismo condicional
             : (
                 designs.length > 0 
 
