@@ -5,6 +5,7 @@ import { Input } from "../../common/Input/Input";
 import { useNavigate } from "react-router-dom";
 import { createAppointment } from "../../services/apiCalls";
 import { useEffect, useState } from 'react';
+import { paymentDataCheck } from "../paymentSlice";
 
 export const AppointmentAdd = () => {
     //Instanciamos Redux en modo LECTURA
@@ -16,7 +17,12 @@ export const AppointmentAdd = () => {
         date: "",
         hour: "",
         });
+    
+    const [cardSecurity, setCardSecurity] = useState({
+        safeNumber:""
+          });
 
+    const reduxPaymentData = useSelector(paymentDataCheck);
 
     //BINDEO
     const inputHandler = (e) => {
@@ -25,6 +31,13 @@ export const AppointmentAdd = () => {
         [e.target.name]: e.target.value,
       }));
     };
+
+    const inputHandlerSecurity = (e) => {
+      setCardSecurity((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
     const registerAppointment = () => {
 
@@ -102,7 +115,7 @@ export const AppointmentAdd = () => {
                     type={"number"}
                     placeholder="Introduce the artist identification number"
                     value={newAppointmentBody.artist_id}
-                    name={"artistId"}
+                    name={"artist_id"}
                     className="defaultInput"
                     manejadora={inputHandler}
                     />
@@ -125,6 +138,24 @@ export const AppointmentAdd = () => {
                     name={"hour"}
                     className="defaultInput"
                     manejadora={inputHandler}
+                    />
+                  </div>
+                </div>
+                <div className="col-5">
+                  <div className="row inputRow">
+                  Card Number: {reduxPaymentData.paymentDataData?.data?.data?.cardNumber}
+                  </div>
+                  <div className="row inputRow">
+                  Vaid thru: {reduxPaymentData.paymentDataData?.data?.data?.validThru}
+                  </div>
+                  <div className="row inputRow">
+                    <Input
+                    type={"number"}
+                    placeholder="Introduce the safe number"
+                    value= {cardSecurity.safeNumber}
+                    name={"safeNumber"}
+                    className="defaultInput"
+                    manejadora={inputHandlerSecurity}
                     />
                   </div>
                 </div>

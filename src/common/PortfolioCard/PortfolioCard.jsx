@@ -5,14 +5,17 @@ import { deleteTattoo } from "../../services/apiCalls";
 import { userDataCheck } from "../../pages/userSlice";
 import { useState } from 'react';
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+
 
 export const PortfolioCard = ({ id, artist_name, style, picture, design }) => {
   //Instancia de Redux para el modo de ESCRITURA
   const dispatch = useDispatch();
   //Instanciamos REDUX en modo lectura para los users
   const reduxUserData = useSelector(userDataCheck);
+  const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const handleClose = () => setShow(false);
@@ -39,14 +42,11 @@ export const PortfolioCard = ({ id, artist_name, style, picture, design }) => {
 
 
   const deleteDesign = (tattooId) => {
-    // console.log("soy tattooId", tattooId.id);
-    // setdesignId((tattooId) => ({
-    //   id: tattooId.id,
-    // }));
-    // console.log("soy designId", designId, "soy userData", reduxUserData.credentials);
-    
-    deleteTattoo (tattooId, reduxUserData.credentials)
+    deleteTattoo (tattooId, reduxUserData.credentials);
+    //searchPortfolio (reduxUserData.credentials.userData.userId, reduxUserData.credentials);
     cancelDelete();
+    //navigate("/portfolio")
+
   };
 
   //console.log("soy designId", designId, "soy userData", reduxUserData.credentials);

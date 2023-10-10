@@ -2,7 +2,6 @@ import './Portfolio.css'
 import { useSelector } from "react-redux";
 import { userDataCheck } from "../userSlice";
 import { searchPortfolio } from "../../services/apiCalls";
-// import { DesignCard } from '../../common/DesignCard/DesignCard';
 import { PortfolioCard } from '../../common/PortfolioCard/PortfolioCard';
 import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
@@ -10,24 +9,25 @@ import { useNavigate } from "react-router-dom";
 export const Portfolio = () => {
   //Instanciamos REDUX en modo lectura para los users
   const reduxUserData = useSelector(userDataCheck);
-  const userId = reduxUserData.credentials.userData.userId;
+  //const userId = reduxUserData.credentials.userData.userId;
   const [designs, setDesigns] = useState([]);
   const [artist, setArtist] = useState([]);
   const navigate = useNavigate();
 
-  console.log("soy userId", userId);
+  //console.log("soy userId", userId);
 
   useEffect(() => {
-    searchPortfolio(userId, reduxUserData.credentials)
+    searchPortfolio(reduxUserData.credentials.userData.userId, reduxUserData.credentials)
       .then((results) => {
-      console.log("entro")
+      //console.log("entro")
       setDesigns(results.data.data[0].Designs);
       setArtist(results.data.data[0]);
-      console.log("soy artist", artist);
-      console.log("soy designs", designs);
+      // console.log("soy artist", artist);
+      // console.log("soy designs", designs);
     })
-    console.log("soy designs", designs);
-  }, [userId]);
+    console.log("soy designs", designs)
+    //console.log("soy designs", designs);
+  }, [designs.length]);
 
     return (
         <>
