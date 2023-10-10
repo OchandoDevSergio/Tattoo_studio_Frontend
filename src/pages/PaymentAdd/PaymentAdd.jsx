@@ -20,7 +20,7 @@ export const PaymentAdd = () => {
     user_id: reduxUserData.credentials?.userData?.userId,
   });
 
-  console.log ("soy reduxUserData en payment add", reduxUserData);
+  //console.log ("soy reduxUserData en payment add", reduxUserData);
 
   //BINDEO
   const inputHandler = (e) => {

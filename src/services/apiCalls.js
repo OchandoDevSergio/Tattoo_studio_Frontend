@@ -12,6 +12,14 @@ export const bringAllAppointments = async (userData) => {
   });
 };
 
+export const createAppointment = async (newAppointmentBody, userData) => {
+  return axios.post(`http://localhost:5000/appointments`, newDesignBody, {
+    headers: {
+      authorization: "Bearer " + userData.token,
+    },
+  });
+};
+
 export const registerDesign = async (newDesignBody, userData) => {
   return axios.post(`http://localhost:5000/designs`, newDesignBody, {
     headers: {

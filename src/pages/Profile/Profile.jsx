@@ -116,18 +116,15 @@ export const Profile = () => {
   //   console.log("soy reduxUserData en profile", reduxUserData);
   // }, [reduxUserData]);
 
-  //Inicializamos o instanciamos REDUX en modo lectura
-  const datosReduxUser = useSelector(userDataCheck);
-
   useEffect(() => {
     if (
-      datosReduxUser.credentials?.userData?.roleId !== 1 &&
-      datosReduxUser.credentials?.userData?.roleId !== 2 &&
-      datosReduxUser.credentials?.userData?.roleId !== 3
+      reduxUserData.credentials?.userData?.roleId !== 1 &&
+      reduxUserData.credentials?.userData?.roleId !== 2 &&
+      reduxUserData.credentials?.userData?.roleId !== 3
     ) {
       navigate("/");
     }
-  }, [datosReduxUser]);
+  }, [reduxUserData]);
 
 //console.log("el lenght", reduxPaymentData.paymentDataData?.data?.data?.length)
 
