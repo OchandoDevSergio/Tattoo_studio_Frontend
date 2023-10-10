@@ -27,6 +27,8 @@ export const AppointmentAdd = () => {
     };
 
     const registerAppointment = () => {
+
+        
         createAppointment(newAppointmentBody, reduxUserData.credentials)
         };
       
@@ -40,20 +42,20 @@ export const AppointmentAdd = () => {
                 <div className="col-5">
                   <div className="row inputRow">
                     <Input
-                    type={"number"}
+                    type={"text"}
                     placeholder="Introduce the customer user identification number"
                     value={newAppointmentBody.user_id}
-                    name={"userId"}
+                    name={"user_id"}
                     className="defaultInput"
                     manejadora={inputHandler}
                     />
                   </div>
                   <div className="row inputRow">
                     <Input
-                    type={"number"}
+                    type={"text"}
                     placeholder="Introduce the artist identification number"
                     value={newAppointmentBody.artist_id}
-                    name={"artistId"}
+                    name={"artist_id"}
                     className="defaultInput"
                     manejadora={inputHandler}
                     />

@@ -39,12 +39,13 @@ export const PortfolioCard = ({ id, artist_name, style, picture, design }) => {
 
 
   const deleteDesign = (tattooId) => {
-    console.log("soy tattooId", tattooId.id);
-    setdesignId((tattooId) => ({
-      id: tattooId.id,
-    }));
-    console.log("soy designId", designId, "soy userData", reduxUserData.credentials);
-    deleteTattoo (designId, reduxUserData.credentials)
+    // console.log("soy tattooId", tattooId.id);
+    // setdesignId((tattooId) => ({
+    //   id: tattooId.id,
+    // }));
+    // console.log("soy designId", designId, "soy userData", reduxUserData.credentials);
+    
+    deleteTattoo (tattooId, reduxUserData.credentials)
     cancelDelete();
   };
 

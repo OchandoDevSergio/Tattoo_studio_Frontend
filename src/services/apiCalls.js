@@ -13,7 +13,7 @@ export const bringAllAppointments = async (userData) => {
 };
 
 export const createAppointment = async (newAppointmentBody, userData) => {
-  return axios.post(`http://localhost:5000/appointments`, newDesignBody, {
+  return axios.post(`http://localhost:5000/appointments`, newAppointmentBody, {
     headers: {
       authorization: "Bearer " + userData.token,
     },
@@ -79,8 +79,12 @@ export const modifyUser = async (modifyUserBody, userData) => {
   });
 };
 
-export const deleteTattoo= async (designId, userData) => {
-  return axios.delete(`http://localhost:5000/designs`, designId, {
+export const deleteTattoo= async (tattooId, userData) => {
+
+
+  let erase = tattooId.id
+
+  return axios.delete(`http://localhost:5000/designs/${erase}`, {
     headers: {
       authorization: "Bearer " + userData.token,
     },
