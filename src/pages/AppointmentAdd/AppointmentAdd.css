@@ -1,0 +1,44 @@
+.title {
+    font-family: Cambria ;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+}
+
+.registerAppointment {
+    height: 83vh;
+    width: 100vw;
+
+    /* background-color: white; */
+    background-image:url(https://i.ibb.co/wBRSpSF/fondo2.jpg);
+    color: white;
+}
+
+.upRowAppointment {
+    height: 23vh;
+    width: 100vw;
+}
+
+.midRowPayment {
+    height: 40vh;
+    width: 100vw;
+}
+
+.downRowRegister {
+    height: 10vh;
+    width: 100vw;
+}
+
+.inputRow {
+    height: 10vh;
+}
+
+.price {
+    height: 10vh;
+    width: 100vw;
+}
+
+.subheaderRow {
+    height: 5vh;
+    width: 100vw;
+}

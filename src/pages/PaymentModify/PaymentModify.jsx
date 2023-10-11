@@ -45,10 +45,6 @@ console.log ("soy reduxPaymentData en paymentmodify", reduxPaymentData);
   const tokenPayment = reduxUserData.credentials.token;
 
   const modifyThisPaymentData = () => {
-    // if (modifyPaymentDataBody[check] === "") {
-    //   //Al encontrar un string vacío no dejo continuar, remito al return
-    //   return;
-    // }
 
     modifyPaymentData(modifyPaymentDataBody, tokenPayment)
     .then((resultado) => {

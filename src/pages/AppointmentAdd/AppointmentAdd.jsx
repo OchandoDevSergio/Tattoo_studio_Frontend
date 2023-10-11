@@ -10,6 +10,7 @@ import { paymentDataCheck } from "../paymentSlice";
 export const AppointmentAdd = () => {
     //Instanciamos Redux en modo LECTURA
     const reduxUserData = useSelector(userDataCheck);
+    const reduxPaymentData = useSelector(paymentDataCheck);
     const navigate = useNavigate();
     const [newAppointmentBody, setNewAppointmentBody] = useState({
         user_id: "",
@@ -22,8 +23,8 @@ export const AppointmentAdd = () => {
         safeNumber:""
           });
 
-    const reduxPaymentData = useSelector(paymentDataCheck);
 
+    console.log("soy reduxPaymentData", reduxPaymentData);
     //BINDEO
     const inputHandler = (e) => {
         setNewAppointmentBody((prevState) => ({
@@ -41,7 +42,6 @@ export const AppointmentAdd = () => {
 
     const registerAppointment = () => {
 
-        
         createAppointment(newAppointmentBody, reduxUserData.credentials)
         };
       
@@ -106,10 +106,10 @@ export const AppointmentAdd = () => {
         )}
         {reduxUserData.credentials.userData.roleId === 2 && (
             <>
-            <div className="container-fluid register">
-              <div className="row upRowRegister">
-                <div className="col-1"></div>
-                <div className="col-5">
+            <div className="container-fluid registerAppointment">
+              <div className='row subheaderRow'></div>
+              <div className="row upRowAppointment">
+                <div className='col'>
                   <div className="row inputRow">
                     <Input
                     type={"number"}
@@ -120,6 +120,8 @@ export const AppointmentAdd = () => {
                     manejadora={inputHandler}
                     />
                   </div>
+                </div>
+                <div className='col'>
                   <div className="row inputRow">
                     <Input
                     type={"text"}
@@ -141,33 +143,47 @@ export const AppointmentAdd = () => {
                     />
                   </div>
                 </div>
-                <div className="col-5">
-                  <div className="row inputRow">
+              </div>
+              <div className="row midRowPayment">
+                <div className='row price'>
+                  <div className="row inputRow title">
+                  To make an appointment, a €20 deposit is required
+                  </div>
+                </div>
+                <div className='row paymentDataShow'>
+                  <div className='col-2'></div>
+                  <div className='col'>
+                  <div className="row inputRow title">
                   Card Number: {reduxPaymentData.paymentDataData?.data?.data?.cardNumber}
                   </div>
-                  <div className="row inputRow">
+                  <div className="row inputRow title">
                   Vaid thru: {reduxPaymentData.paymentDataData?.data?.data?.validThru}
                   </div>
+                  </div>
+                  <div className='col'>
                   <div className="row inputRow">
                     <Input
                     type={"number"}
-                    placeholder="Introduce the safe number"
+                    placeholder="Introduce the CVV/CVC number"
                     value= {cardSecurity.safeNumber}
                     name={"safeNumber"}
                     className="defaultInput"
                     manejadora={inputHandlerSecurity}
                     />
                   </div>
+                  <div className="row inputRow title">
+                  Please check that your payment details are correct, otherwise you can modify them in your user profile
+                  </div>
+                  </div>
+                  <div className='col-2'></div>
                 </div>
-                <div className="col-1"></div>
-              </div>
+              </div>  
               <div className="row downRowRegister">
                 <div className="buttonBody" onClick={() => registerAppointment()}>
                 Register appointment
                 </div>
               </div>
             </div>
-            <div>soy customer</div>
             </>
         )}
         </>
