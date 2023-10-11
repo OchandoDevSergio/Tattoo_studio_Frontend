@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { createAppointment } from "../../services/apiCalls";
 import { useEffect, useState } from 'react';
 import { paymentDataCheck } from "../paymentSlice";
+import { bringArtists } from '../../services/apiCalls';
 
 export const AppointmentAdd = () => {
     //Instanciamos Redux en modo LECTURA
@@ -23,8 +24,26 @@ export const AppointmentAdd = () => {
         safeNumber:""
           });
 
+    const [artists, setArtists] = useState([]);
 
-    console.log("soy reduxPaymentData", reduxPaymentData);
+    useEffect(() => {
+      bringArtists()
+      .then(
+        resultado => {
+          setArtists(resultado.data.data)
+        }
+      )
+      .catch(error => console.log(error))
+    }, []);
+
+    console.log(artists)
+
+    const [selectedArtist, setSelectedArtist] = useState([]);
+
+    useEffect(() => {
+      console.log(selectedArtist);
+    }, [selectedArtist]);
+    //console.log("soy reduxPaymentData", reduxPaymentData);
     //BINDEO
     const inputHandler = (e) => {
         setNewAppointmentBody((prevState) => ({
@@ -41,8 +60,9 @@ export const AppointmentAdd = () => {
   };
 
     const registerAppointment = () => {
-
+       console.log("entro", newAppointmentBody)
         createAppointment(newAppointmentBody, reduxUserData.credentials)
+        navigate("/appointments");
         };
       
     return (
@@ -110,15 +130,12 @@ export const AppointmentAdd = () => {
               <div className='row subheaderRow'></div>
               <div className="row upRowAppointment">
                 <div className='col'>
-                  <div className="row inputRow">
-                    <Input
-                    type={"number"}
-                    placeholder="Introduce the artist identification number"
-                    value={newAppointmentBody.artist_id}
-                    name={"artist_id"}
-                    className="defaultInput"
-                    manejadora={inputHandler}
-                    />
+                  <div className="row inputRow artistDropdown">
+                    {/* <select value={selectedArtist} onChange={e=>setSelectedArtist(e.target.value)}>
+                       {
+                        artists.map(opt=><option>{opt}</option>)
+                       }
+                    </select> */}
                   </div>
                 </div>
                 <div className='col'>

@@ -4,6 +4,10 @@ export const bringDesigns = async () => {
   return await axios.get(`http://localhost:5000/designs`);
 };
 
+export const bringArtists = async () => {
+  return await axios.get(`http://localhost:5000/artists`);
+};
+
 export const bringAllAppointments = async (userData) => {
   return await axios.get(`http://localhost:5000/appointments`, {
     headers: {
@@ -13,6 +17,7 @@ export const bringAllAppointments = async (userData) => {
 };
 
 export const createAppointment = async (newAppointmentBody, userData) => {
+  console.log("entro al apicall")
   return axios.post(`http://localhost:5000/appointments`, newAppointmentBody, {
     headers: {
       authorization: "Bearer " + userData.token,
