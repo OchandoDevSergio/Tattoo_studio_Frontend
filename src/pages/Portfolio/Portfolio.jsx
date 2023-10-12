@@ -19,26 +19,22 @@ export const Portfolio = () => {
   useEffect(() => {
     searchPortfolio(reduxUserData.credentials.userData.userId, reduxUserData.credentials)
       .then((results) => {
-      //console.log("entro")
       setDesigns(results.data.data[0].Designs);
       setArtist(results.data.data[0]);
-      // console.log("soy artist", artist);
-      // console.log("soy designs", designs);
     })
     console.log("soy designs", designs)
-    //console.log("soy designs", designs);
+
   }, [designs.length]);
 
     return (
         <>
         <div className='subHeader'>
           <div className='portfolioName'>{reduxUserData.credentials.userData.userName.toUpperCase()} PORTFOLIO</div>
-          {/* <div className="subheaderSpace"></div> */}
           <div className='subheaderButton' onClick={() => navigate("/designadd")}>ADD TATTOO DESIGN</div>
         </div>
                 {designs.length > 0 
 
-                    ? (<div className='home'>
+                    ? (<div className='infinite-scroll-container'>
                     <div className='row spaceRow'></div>
         
                       {designs.map(

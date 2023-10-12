@@ -34,8 +34,8 @@ export const Appointments = () => {
           </div>
           {appointments.length > 0 
 
-           ? (<div className='appointments'>
-             <div className='row spaceRow'></div>
+           ? (<div className='infinite-scroll-container'>
+             {/* <div className='row spaceRow'></div> */}
              {appointments.map(
                appointment => {
                 return (
@@ -55,9 +55,7 @@ export const Appointments = () => {
                    user_email={appointment.User.email}
                    user_phone={appointment.User.phone}
                   />)}
-              )}</div>
-
-              )
+              )}</div>)
             : (<div className='appointments'>
                   <div className='title'>No designs found, insert a tattoo style</div>
                   </div>)

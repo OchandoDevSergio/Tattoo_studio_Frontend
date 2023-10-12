@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 
 import { Input } from "../../common/Input/Input";
 import { searchCriteria } from "../../services/apiCalls";
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 import './Tattoos.css'
 
@@ -55,8 +56,7 @@ export const Tattoos = () => {
         </div>
         {designs.length > 0 
 
-            ? (<div className='home'>
-            <div className='row spaceRow'></div>
+            ? (<div className='infinite-scroll-container'>
 
               {designs.map(
                  design => {
@@ -76,40 +76,12 @@ export const Tattoos = () => {
                  }
              )}
 
-         </div>
-
-         )
+         </div>)
 //mirar si a partir de aquí he puesto dos veces el mismo condicional
-            : (
-                designs.length > 0 
-
-                ? (<div className='home'>
-                   <div className='row spaceRow'></div>
-
-                     {designs.map(
-                        design => {
-                            return (
-                                <DesignCard
-                                
-                                // Key es una palabra reservada en React
-                                key={design.id}
-                                ////////////////////////////////
-                                id={design.id}
-                                artist_id={design.artist_id}
-                                style={design.style}
-                                picture={design.picture}
-                                design={design}
-                                />
-                            )
-                        }
-                    )}
-
-                </div>)
-
-                : (<div className='home'>
+            : (<div className='home'>
                   <div className='title'>No designs found, insert a tattoo style</div>
                   </div>)
-            )}
+            }
         </>
     )
 }

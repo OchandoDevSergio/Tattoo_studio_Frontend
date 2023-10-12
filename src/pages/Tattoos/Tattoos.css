@@ -15,3 +15,13 @@
     font-size: large;
     color: white;
 }
+
+.infinite-scroll-container {
+    width: 100vw;
+    overflow: auto;
+    flex-direction: column;
+    background-image:url(https://i.ibb.co/wBRSpSF/fondo2.jpg);
+    display:flex;
+    align-items:center;
+    justify-content: space-evenly;
+}
