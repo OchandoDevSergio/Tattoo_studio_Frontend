@@ -4,7 +4,7 @@
     padding: 0;
 
     height: 25vh;
-    width: 80vw;
+    width: 35vw;
 
     /* background-color:goldenrod; */
     background-color: black;
@@ -17,11 +17,21 @@
 
     text-align: center;
 
-    border-radius: 5% 5% 5% 5%;
+    border-radius: 1em;
     border: 0.1em solid black;
-
-    font-weight: bold;
 
     transition: 0.2s;
     cursor: pointer;
+}
+
+.appointmentDesign:hover {
+
+    transition: 0.2s;
+    background-color:goldenrod;
+    border: 0.1em solid black;
+    color:black;
+}
+
+.bold {
+    font-weight:bold;
 }
