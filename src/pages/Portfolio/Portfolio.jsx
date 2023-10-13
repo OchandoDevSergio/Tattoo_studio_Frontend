@@ -13,7 +13,7 @@ export const Portfolio = () => {
   const [designs, setDesigns] = useState([]);
   const [artist, setArtist] = useState([]);
   const navigate = useNavigate();
-
+  const [counter, setCounter] = useState([]);
   //console.log("soy userId", userId);
 
   useEffect(() => {
@@ -22,9 +22,8 @@ export const Portfolio = () => {
       setDesigns(results.data.data[0].Designs);
       setArtist(results.data.data[0]);
     })
-    console.log("soy designs", designs)
-
-  }, [designs.length]);
+    .catch(error => console.log(error))
+  }, []);
 
     return (
         <>

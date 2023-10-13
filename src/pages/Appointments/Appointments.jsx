@@ -12,13 +12,15 @@ export const Appointments = () => {
     const navigate = useNavigate();
     const [appointments, setAppointments] = useState([]);
 
-    bringAllAppointments(reduxUserData.credentials)
-    .then(
-      resultado => {
-        setAppointments(resultado.data.data)
-      }
-    )
-    .catch(error => console.log(error))
+    useEffect(() => {
+      bringAllAppointments(reduxUserData.credentials)
+      .then(
+        resultado => {
+          setAppointments(resultado.data.data)
+        }
+      )
+      .catch(error => console.log(error))
+    }), [reduxUserData];
 
     console.log("soy appointments", appointments);
 
@@ -35,7 +37,6 @@ export const Appointments = () => {
           {appointments.length > 0 
 
            ? (<div className='infinite-scroll-container'>
-             {/* <div className='row spaceRow'></div> */}
              {appointments.map(
                appointment => {
                 return (

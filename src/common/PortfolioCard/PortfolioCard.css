@@ -1,11 +1,11 @@
 
 .cardDesign {
     
-    margin: 0;
-    padding: 0;
+    margin: 2em;
+    padding: 0em;
 
-    height: 23vh;
-    width: 13vw;
+    height: 55vh;
+    width: 27vw;
 
     /* background-color:goldenrod; */
     background-color: black;
@@ -36,8 +36,8 @@
 }
 
 .picture {
-    height: 20vh;
-    width: 12vw;
+    height: 50vh;
+    width: 25vw;
 
     background-color: white;
     border: 0.1em solid black;
@@ -57,6 +57,7 @@
     display:flex;
     justify-content: center;
     align-items: center;
+    font-family: Cambria ;
 }
 
 .modal-design-header {
@@ -88,6 +89,7 @@
     height: 10vh;
     width: 56.5vw;
     background-color: black;
+    font-family: Cambria ;
 }
 
 .modalConfirm-design-body {
@@ -97,6 +99,7 @@
     display:flex;
     justify-content: center;
     align-items: center;
+    font-family: Cambria ;
 }
 
 .modalConfirm-design-footer {
@@ -106,6 +109,7 @@
     display:flex;
     justify-content: center;
     align-items: center;
+    font-family: Cambria ;
 }
 
 .spacer {

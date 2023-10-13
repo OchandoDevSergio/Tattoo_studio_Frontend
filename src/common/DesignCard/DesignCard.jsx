@@ -24,9 +24,9 @@ export const DesignCard = ({ id, artist_name, style, picture, design }) => {
 
 
   return (
-    <div><Button variant="primary" className="cardDesign" onClick={() => showMe(design)}>
+    <div><Button variant="primary" className="cardDesignTattoo" onClick={() => showMe(design)}>
        Artist: {artist_name} 
-      <img className="picture" src={picture} alt={id} />
+      <img className="pictureTattoo" src={picture} alt={id} />
       <div>Style: {style}</div>
       </Button>
 

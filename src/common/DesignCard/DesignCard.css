@@ -1,12 +1,13 @@
 
-.cardDesign {
+.cardDesignTattoo {
     
-    margin: 0;
-    padding: 10em;
+    margin: 2em;
+    padding: 0em;
 
-    height: 35vh;
-    width: 13vw;
+    height: 57vh;
+    width: 26vw;
 
+    /* opacity: 0; */
     /* background-color:goldenrod; */
     background-color: black;
     color: white;
@@ -22,25 +23,27 @@
     border: 0.1em solid black;
 
     font-weight: bold;
-
     transition: 0.2s;
     cursor: pointer;
+    font-family: Cambria ;
+
 }
 
-.cardDesign:hover {
+.cardDesignTattoo:hover {
 
     transition: 0.2s;
-    /* background-color: black; */
     background-color:goldenrod;
     border: 0.1em solid black;
 }
 
-.picture {
-    height: 10em;
-    width: 10em;
-
+.pictureTattoo {
+    height: 50vh;
+    width: 25vw;
+    /* opacity: 10; */
     background-color: white;
-    border: 0.1em solid black;
+    border: 0.1em solid goldenrod;
+
+
 }
 
 .modalPicture {
@@ -58,6 +61,7 @@
     display:flex;
     justify-content: center;
     align-items: center;
+    font-family: Cambria ;
 }
 
 .modal-design-header {
