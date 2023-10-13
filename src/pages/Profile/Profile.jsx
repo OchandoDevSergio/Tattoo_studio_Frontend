@@ -45,27 +45,24 @@ export const Profile = () => {
 
   //Código para traer los datos de pago
   const [customerId, setcustomerId] = useState(reduxUserData?.credentials?.userData?.userId);
-      useEffect(() => {
-      console.log("soy customerId", customerId);
-    }, [customerId]);
+    
+    useEffect(() => {
+      setcustomerId(reduxUserData?.credentials?.userData?.userId)
+    }, [reduxUserData]);
 
     const searchPaymentData = (paymentDatas) => {
       dispatch(loadPaymentData({ paymentDataData: paymentDatas }));
     };
 
+    const tokenPayment = reduxUserData.credentials.token;
 
 
-    // useEffect(() => {
-      const tokenPayment = reduxUserData.credentials.token;
-      //console.log("soy tokenPayment", tokenPayment);
-  //  }, [reduxUserData]);
-
-   useEffect(() => {
-    searchCustomerPayment(customerId, tokenPayment)
-    .then((results) => {
-      searchPaymentData(results);
-    })
-  }, [customerId]);
+    useEffect(() => {
+      searchCustomerPayment(customerId, tokenPayment)
+      .then((results) => {
+        searchPaymentData(results);
+      })
+    }, [customerId]);
 
     const reduxPaymentData = useSelector(paymentDataCheck);
 

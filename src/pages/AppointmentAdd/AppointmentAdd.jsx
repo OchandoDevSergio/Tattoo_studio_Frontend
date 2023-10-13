@@ -5,13 +5,37 @@ import { Input } from "../../common/Input/Input";
 import { useNavigate } from "react-router-dom";
 import { createAppointment } from "../../services/apiCalls";
 import { useEffect, useState } from 'react';
-import { paymentDataCheck } from "../paymentSlice";
+import { paymentDataCheck, loadPaymentData } from "../paymentSlice";
+import { searchCustomerPayment } from '../../services/apiCalls';
+import { useDispatch } from "react-redux";
 import { bringArtists } from '../../services/apiCalls';
 
 export const AppointmentAdd = () => {
-    //Instanciamos Redux en modo LECTURA
+    //Instanciamos Redux en modo LECTURA user
     const reduxUserData = useSelector(userDataCheck);
+
+    const dispatch = useDispatch();
+
+    //Código para traer los datos de pago
+    const customerId =reduxUserData?.credentials?.userData?.userId;
+
+    const searchPaymentData = (paymentDatas) => {
+      dispatch(loadPaymentData({ paymentDataData: paymentDatas }));
+    };
+
+    const tokenPayment = reduxUserData.credentials.token;
+
+
+    useEffect(() => {
+      
+      searchCustomerPayment(customerId, tokenPayment)      
+      .then((results) => {
+        searchPaymentData(results);
+      })
+    }, [customerId]);
+
     const reduxPaymentData = useSelector(paymentDataCheck);
+
     const navigate = useNavigate();
     const [newAppointmentBody, setNewAppointmentBody] = useState({
         user_id: "",
@@ -43,7 +67,7 @@ export const AppointmentAdd = () => {
     useEffect(() => {
       console.log(selectedArtist);
     }, [selectedArtist]);
-    //console.log("soy reduxPaymentData", reduxPaymentData);
+
     //BINDEO
     const inputHandler = (e) => {
         setNewAppointmentBody((prevState) => ({
