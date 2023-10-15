@@ -16,8 +16,23 @@ export const bringAllAppointments = async (userData) => {
   });
 };
 
+export const bringCustomerAppointments = async (userId, userData) => {
+  return await axios.get(`http://localhost:5000/appointments${userId}`, {
+    headers: {
+      authorization: "Bearer " + userData.token,
+    },
+  });
+};
+
+export const bringArtistAppointments = async (artistId, userData) => {
+  return await axios.get(`http://localhost:5000/appointments/artist${artistId}`, {
+    headers: {
+      authorization: "Bearer " + userData.token,
+    },
+  });
+};
+
 export const createAppointment = async (newAppointmentBody, userData) => {
-  console.log("entro al apicall")
   return axios.post(`http://localhost:5000/appointments`, newAppointmentBody, {
     headers: {
       authorization: "Bearer " + userData.token,
@@ -90,6 +105,17 @@ export const deleteTattoo= async (tattooId, userData) => {
   let erase = tattooId.id
 
   return axios.delete(`http://localhost:5000/designs/${erase}`, {
+    headers: {
+      authorization: "Bearer " + userData.token,
+    },
+  });
+};
+
+export const deleteAppointment= async (appointmentId, userData) => {
+
+  let erase = appointmentId.id
+
+  return axios.delete(`http://localhost:5000/appointments/${erase}`, {
     headers: {
       authorization: "Bearer " + userData.token,
     },
