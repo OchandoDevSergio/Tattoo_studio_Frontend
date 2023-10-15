@@ -35,3 +35,95 @@
 .bold {
     font-weight:bold;
 }
+
+.modal-design {
+    height:100vh;
+    width: 80vw;
+    color: white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Cambria ;
+}
+
+.modal-design-header {
+    height: 13vh;
+    width: 56.5vw;
+    background-color: black;
+    flex-direction: column;
+}
+
+.modal-design-body {
+    height: 20vh;
+    width: 56.5vw;
+    background-color: black;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-design-footer {
+    height: 9vh;
+    width: 56.5vw;
+    background-color: black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalConfirm-design-header {
+    height: 10vh;
+    width: 56.5vw;
+    background-color: black;
+    font-family: Cambria ;
+}
+
+.modalConfirm-design-body {
+    height: 20vh;
+    width: 56.5vw;
+    background-color: black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Cambria ;
+}
+
+.modalConfirm-design-footer {
+    height: 10vh;
+    width: 56.5vw;
+    background-color: black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Cambria ;
+}
+
+.spacer {
+    height: 1vh;
+    width: 10vw;
+    /* background-color: blue; */
+}
+
+.modalButton {
+
+    margin: 1em;
+
+    color: white;
+    font-weight: bold;
+
+    font-size: large;
+    font-family: Cambria ;
+
+    transition: 0.2s;
+    cursor: pointer;
+
+    display:flex;
+    justify-content: center;
+}
+
+.modalButton:hover {
+
+    transition: 0.2s;
+    color: rgb(198, 124, 71);
+}
