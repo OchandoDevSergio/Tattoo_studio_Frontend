@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-export const AppointmentCard = ({ id, user_id, artist_id, date, hour, artist_name, user_name, user_surnames, user_email, user_phone, appointment}) => {
+export const AppointmentCard = ({ id, user_id, artist_id, date, hour, artist_name, user_name, user_surnames, user_email, user_phone, appointment, update}) => {
 
   const reduxUserData = useSelector(userDataCheck);
   const [show, setShow] = useState(false);
@@ -26,6 +26,7 @@ export const AppointmentCard = ({ id, user_id, artist_id, date, hour, artist_nam
   };
 
   const cancelDelete = () => {
+    update();
     setShowConfirmation(false)
     setShow(false)
   };
@@ -37,8 +38,8 @@ export const AppointmentCard = ({ id, user_id, artist_id, date, hour, artist_nam
 
 
 
-  const unsetAppointment = (appointmentId) => {
-    deleteAppointment (appointmentId, reduxUserData.credentials);
+  const unsetAppointment = async (appointmentId) => {
+    await deleteAppointment (appointmentId, reduxUserData.credentials);
     cancelDelete();
   };
 

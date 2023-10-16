@@ -17,7 +17,7 @@ export const bringAllAppointments = async (userData) => {
 };
 
 export const bringCustomerAppointments = async (userId, userData) => {
-  return await axios.get(`http://localhost:5000/appointments${userId}`, {
+  return await axios.get(`http://localhost:5000/appointments/${userId}`, {
     headers: {
       authorization: "Bearer " + userData.token,
     },
@@ -25,7 +25,7 @@ export const bringCustomerAppointments = async (userId, userData) => {
 };
 
 export const bringArtistAppointments = async (artistId, userData) => {
-  return await axios.get(`http://localhost:5000/appointments/artist${artistId}`, {
+  return await axios.get(`http://localhost:5000/appointments/artist/${artistId}`, {
     headers: {
       authorization: "Bearer " + userData.token,
     },
