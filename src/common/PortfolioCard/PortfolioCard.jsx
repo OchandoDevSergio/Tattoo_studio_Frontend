@@ -10,7 +10,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 
-export const PortfolioCard = ({ id, artist_name, style, picture, design }) => {
+export const PortfolioCard = ({ id, artist_name, style, picture, design, update }) => {
   //Instancia de Redux para el modo de ESCRITURA
   const dispatch = useDispatch();
   //Instanciamos REDUX en modo lectura para los users
@@ -30,6 +30,7 @@ export const PortfolioCard = ({ id, artist_name, style, picture, design }) => {
   };
 
   const cancelDelete = () => {
+    update();
     setShowConfirmation(false)
     setShow(false)
   };

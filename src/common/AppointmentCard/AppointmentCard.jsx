@@ -63,7 +63,7 @@ export const AppointmentCard = ({ id, user_id, artist_id, date, hour, artist_nam
       <div><span className="bold">Appointment identification number:</span> {id}</div>
       <div><span className="bold">Date:</span> {date} <span className="bold">Hour:</span> {hour} <span className="bold">Artist:</span> {artist_name}</div>
       </Modal.Header>
-      <Modal.Body className="modal-design-body">
+      <Modal.Body className="modal-design-bodyA">
       <div className="bold">Customer:</div>
       <div><span className="bold">Name:</span> {user_name} <span className="bold">Surnames:</span> {user_surnames}</div>
       <div><span className="bold">Mail:</span> {user_email} <span className="bold">Phone:</span> {user_phone}</div>

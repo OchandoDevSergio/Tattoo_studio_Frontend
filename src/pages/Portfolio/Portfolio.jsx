@@ -19,11 +19,23 @@ export const Portfolio = () => {
   useEffect(() => {
     searchPortfolio(reduxUserData.credentials.userData.userId, reduxUserData.credentials)
       .then((results) => {
-      setDesigns(results.data.data[0].Designs);
       setArtist(results.data.data[0]);
+      setDesigns(results.data.data[0].Designs);
     })
     .catch(error => console.log(error))
+    console.log("aqui vuelvo????")
   }, []);
+
+  const updateMe = () => {
+    searchPortfolio(reduxUserData.credentials.userData.userId, reduxUserData.credentials)
+      .then((results) => {
+      setArtist(results.data.data[0]);
+      setDesigns(results.data.data[0].Designs);
+      console.log(results, "soy el resultado a ver que trae....")
+    })
+    .catch(error => console.log(error))
+
+  }
 
     return (
         <>
@@ -47,6 +59,7 @@ export const Portfolio = () => {
                                      id={design.id}
                                      picture={design.picture}
                                      design={design}
+                                     update={updateMe}
                                  />
                              )
                          }
