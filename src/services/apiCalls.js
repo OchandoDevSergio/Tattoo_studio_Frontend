@@ -33,6 +33,7 @@ export const bringArtistAppointments = async (artistId, userData) => {
 };
 
 export const createAppointment = async (newAppointmentBody, userData) => {
+  console.log(newAppointmentBody, "oye")
   return axios.post(`http://localhost:5000/appointments`, newAppointmentBody, {
     headers: {
       authorization: "Bearer " + userData.token,

@@ -55,7 +55,14 @@ export const AppointmentAdd = () => {
       .catch((error) => console.log(error));
   }, []);
 
-  const [selectedArtist, setSelectedArtist] = useState([]);
+  const handleArtistChange = (e) => {
+    setNewAppointmentBody(
+      {
+        user_id: customerId,
+        artist_id: e.target.value
+      }
+    )
+  };
 
   //BINDEO
   const inputHandler = (e) => {
@@ -73,7 +80,9 @@ export const AppointmentAdd = () => {
   };
 
   const registerAppointment = () => {
-    console.log("entro", newAppointmentBody);
+
+    console.log(newAppointmentBody, "a verrrr");
+
     createAppointment(newAppointmentBody, reduxUserData.credentials);
     navigate("/appointments");
   };
@@ -144,11 +153,10 @@ export const AppointmentAdd = () => {
             <div className="row upRowAppointment">
               <div className="col">
                 <div className="row inputRow artistDropdown">
-                  {/* <select value={selectedArtist} onChange={e=>setSelectedArtist(e.target.value)}>
-                       {
-                        artists.map(opt=><option>{opt}</option>)
-                       }
-                    </select> */}
+                  <select onChange={handleArtistChange}>
+                    <option value="Select an Artist"> -- Select an Artist -- </option>
+                    {artists.map((artist) => <option value={artist.id}>{artist.name}</option>)}
+                  </select>
                 </div>
               </div>
               <div className="col">
