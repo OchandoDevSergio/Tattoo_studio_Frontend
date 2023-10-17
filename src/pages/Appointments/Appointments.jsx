@@ -130,7 +130,6 @@ export const Appointments = () => {
               </div>
             </div>
           )}
-          ;<div>soy admin y customer</div>
         </>
       )}
       {/* {reduxUserData.credentials.userData.roleId === 2 && (

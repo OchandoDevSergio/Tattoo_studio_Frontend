@@ -152,8 +152,8 @@ export const AppointmentAdd = () => {
             <div className="row subheaderRow"></div>
             <div className="row upRowAppointment">
               <div className="col">
-                <div className="row inputRow artistDropdown">
-                  <select onChange={handleArtistChange}>
+                <div className="row inputRow">
+                  <select className=" artistDropdown" onChange={handleArtistChange}>
                     <option value="Select an Artist"> -- Select an Artist -- </option>
                     {artists.map((artist) => <option value={artist.id}>{artist.name}</option>)}
                   </select>

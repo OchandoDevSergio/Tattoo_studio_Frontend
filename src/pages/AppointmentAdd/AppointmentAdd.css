@@ -42,3 +42,9 @@
     height: 5vh;
     width: 100vw;
 }
+
+.artistDropdown {
+    width: 20vw;
+    border-radius: 10em;
+    border: solid goldenrod;
+}
