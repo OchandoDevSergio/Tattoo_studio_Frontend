@@ -1,5 +1,5 @@
 .userDesign { 
-    margin: 0;
+    margin: 1em;
     padding: 0;
 
     height: 25vh;
@@ -19,6 +19,31 @@
     border-radius: 1em;
     border: 0.1em solid black;
 
+    /* transition: 0.2s;
+    cursor: pointer; */
+}
+
+.userDesign:hover {
+
+    transition: 0.2s;
+    background-color:goldenrod;
+    border: 0.1em solid black;
+    color:black;
+}
+
+.makeArtist {
+    background-color: black;
+    color: rgb(198, 124, 71);
+    border-radius: 1em;
+    border: 0.1em solid black;
+
     transition: 0.2s;
     cursor: pointer;
+}
+
+.makeArtist:hover {
+    transition: 0.2s;
+    background-color:rgb(61, 59, 59);
+    border: 0.1em solid black;
+    color:rgb(198, 124, 71);
 }

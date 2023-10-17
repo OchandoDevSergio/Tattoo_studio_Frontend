@@ -57,6 +57,14 @@ export const registerDesign = async (newDesignBody, userData) => {
   });
 };
 
+export const registerArtist = async (artistRegisterBody, userData) => {
+  return axios.post(`http://localhost:5000/artists`, artistRegisterBody, {
+    headers: {
+      authorization: "Bearer " + userData.token,
+    },
+  });
+};
+
 export const searchCriteria = async (criteria) => {
   return await axios.get(`http://localhost:5000/designs/${criteria}`);
 };
