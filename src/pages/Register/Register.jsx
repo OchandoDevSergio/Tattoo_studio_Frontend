@@ -47,17 +47,17 @@ export const Register = () => {
     }
     };
 
-  const datosReduxUser = useSelector(userDataCheck);
+  const reduxUserData = useSelector(userDataCheck);
   const navigate = useNavigate();
   useEffect(() => {
-    if (datosReduxUser.credentials?.userData?.roleId == 1) {
+    if (reduxUserData.credentials?.userData?.roleId == 1) {
       navigate("/");
-    } else if (datosReduxUser.credentials?.userData?.roleId == 2) {
+    } else if (reduxUserData.credentials?.userData?.roleId == 2) {
       navigate("/");
-    } else if (datosReduxUser.credentials?.userData?.roleId == 3) {
+    } else if (reduxUserData.credentials?.userData?.roleId == 3) {
       navigate("/");
     }
-  }, [datosReduxUser]);
+  }, [reduxUserData]);
 
   return (
     <div className="container-fluid register">

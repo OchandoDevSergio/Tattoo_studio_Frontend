@@ -9,6 +9,14 @@ import { useSelector } from "react-redux";
 
 
 export const AdminAdd = () => {
+  const reduxUserData = useSelector(userDataCheck);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (reduxUserData.credentials?.userData?.roleId !== 1) {
+      navigate("/");
+    }
+  }, [reduxUserData]);
+  
     const [registerBody, setRegisterBody] = useState({
         role_id: 1,
         name: "",
@@ -48,15 +56,7 @@ export const AdminAdd = () => {
         }
         };
     
-      const datosReduxUser = useSelector(userDataCheck);
-      const navigate = useNavigate();
-      useEffect(() => {
-        if (datosReduxUser.credentials?.userData?.roleId == 2) {
-          navigate("/");
-        } else if (datosReduxUser.credentials?.userData?.roleId == 3) {
-          navigate("/");
-        } 
-      }, [datosReduxUser]);
+
 
     return (
         <div className="container-fluid register">

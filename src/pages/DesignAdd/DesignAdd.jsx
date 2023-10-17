@@ -9,11 +9,17 @@ import { registerDesign } from "../../services/apiCalls";
 
 export const DesignAdd = () => {
   const reduxUserData = useSelector(userDataCheck);
-  const userId = reduxUserData.credentials.userData.userId;
+  const userId = reduxUserData?.credentials?.userData?.userId;
   const navigate = useNavigate();
 
   const [artist, setArtist] = useState([]);
 
+  useEffect(() => {
+    if (reduxUserData.credentials?.userData?.roleId !== 3) {
+      navigate("/");
+    }
+  }, []);
+  
   useEffect(() => {
     searchPortfolio(userId, reduxUserData.credentials)
       .then((results) => {

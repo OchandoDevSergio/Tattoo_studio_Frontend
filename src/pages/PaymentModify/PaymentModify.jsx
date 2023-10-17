@@ -18,6 +18,12 @@ export const PaymentModify = () => {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (reduxUserData.credentials?.userData?.roleId !== 2) {
+      navigate("/");
+    }
+  }, []);
+
 console.log ("soy reduxPaymentData en paymentmodify", reduxPaymentData);
 
   const [modifyPaymentDataBody, setmodifyPaymentDataBody] = useState({

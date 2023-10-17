@@ -20,6 +20,17 @@ export const Profile = () => {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (
+      reduxUserData.credentials?.userData?.roleId !== 1 &&
+      reduxUserData.credentials?.userData?.roleId !== 2 &&
+      reduxUserData.credentials?.userData?.roleId !== 3
+    ) {
+      navigate("/");
+    }
+  }, [reduxUserData]);
+
+
   const [modifyUserBody, setModifyUserBody] = useState({
     id: reduxUserData?.credentials?.userData?.userId,
     name: reduxUserData.credentials?.userData?.userName,
@@ -109,19 +120,6 @@ export const Profile = () => {
     }
   };
 
-  // useEffect(() => {
-  //   console.log("soy reduxUserData en profile", reduxUserData);
-  // }, [reduxUserData]);
-
-  useEffect(() => {
-    if (
-      reduxUserData.credentials?.userData?.roleId !== 1 &&
-      reduxUserData.credentials?.userData?.roleId !== 2 &&
-      reduxUserData.credentials?.userData?.roleId !== 3
-    ) {
-      navigate("/");
-    }
-  }, [reduxUserData]);
 
 //console.log("el lenght", reduxPaymentData.paymentDataData?.data?.data?.length)
 

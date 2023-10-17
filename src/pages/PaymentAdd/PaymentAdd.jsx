@@ -10,9 +10,17 @@ import { useSelector } from "react-redux";
 
 export const PaymentAdd = () => {
     const reduxUserData = useSelector(userDataCheck);
-    const datosReduxUser = useSelector(userDataCheck);
+    //const datosReduxUser = useSelector(userDataCheck);
     const reduxPaymentData = useSelector(paymentDataCheck);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+
+    useEffect(() => {
+      if (reduxUserData.credentials?.userData?.roleId !== 2) {
+        navigate("/");
+      }
+    }, []);
 
   const [registerPaymentBody, setRegisterPaymentBody] = useState({
     cardNumber: "",
@@ -52,7 +60,7 @@ export const PaymentAdd = () => {
     };
 
 
-  const navigate = useNavigate();
+
   useEffect(() => {
     if (reduxUserData.credentials?.userData?.roleId !== 2) {
       navigate("/");

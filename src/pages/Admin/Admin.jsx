@@ -13,6 +13,12 @@ export const Admin = () => {
   const reduxUserData = useSelector(userDataCheck);
 
   useEffect(() => {
+    if (reduxUserData.credentials?.userData?.roleId !== 1) {
+      navigate("/");
+    }
+  }, [reduxUserData]);
+
+  useEffect(() => {
   bringUsers(reduxUserData.credentials)
     .then((resultado) => {
       setUsers(resultado.data.data);

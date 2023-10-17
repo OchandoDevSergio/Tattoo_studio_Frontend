@@ -17,6 +17,12 @@ export const Portfolio = () => {
   //console.log("soy userId", userId);
 
   useEffect(() => {
+    if (reduxUserData.credentials?.userData?.roleId !== 3) {
+      navigate("/");
+    }
+  }, []);
+
+  useEffect(() => {
     searchPortfolio(reduxUserData.credentials.userData.userId, reduxUserData.credentials)
       .then((results) => {
       setArtist(results.data.data[0]);
@@ -34,6 +40,12 @@ export const Portfolio = () => {
       //console.log(results, "soy el resultado a ver que trae....")
     })
     .catch(error => console.log(error))
+    console.log("soy el roleid", reduxUserData.credentials?.userData?.roleId)
+    useEffect(() => {
+      if (reduxUserData.credentials?.userData?.roleId !== 3) {
+        navigate("/");
+      }
+    }, []);
 
   }
 
