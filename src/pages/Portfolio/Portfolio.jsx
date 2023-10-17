@@ -31,7 +31,7 @@ export const Portfolio = () => {
       .then((results) => {
       setArtist(results.data.data[0]);
       setDesigns(results.data.data[0].Designs);
-      console.log(results, "soy el resultado a ver que trae....")
+      //console.log(results, "soy el resultado a ver que trae....")
     })
     .catch(error => console.log(error))
 

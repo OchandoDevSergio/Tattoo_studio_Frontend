@@ -22,9 +22,12 @@ export const Appointments = () => {
     if (appointments.length === 0) {
       switch (reduxUserData.credentials.userData.roleId) {
         case 1:
+
           bringAllAppointments(reduxUserData.credentials)
             .then((resultado) => {
+              console.log("soy resultado", resultado)
               setAppointments(resultado.data.data);
+              
             })
             .catch((error) => console.log(error));
 
@@ -68,7 +71,7 @@ export const Appointments = () => {
     bringAllAppointments(reduxUserData.credentials)
     .then(
       resultado => {
-
+        
         console.log(resultado, "esto es lo que trae para actualizar....")
         setAppointments(resultado.data.data)
       }
@@ -85,6 +88,10 @@ export const Appointments = () => {
     )
     .catch(error => console.log(error))
   }}
+
+  useEffect(() => { 
+    console.log("soy appointments", appointments);
+   }, [appointments]);
 
   return (
     <>
@@ -166,7 +173,6 @@ export const Appointments = () => {
               </div>
             </div>
           )}
-          ;<div>soy artist</div>
         </>
       )}
     </>

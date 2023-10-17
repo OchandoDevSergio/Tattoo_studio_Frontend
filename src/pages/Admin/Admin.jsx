@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { bringUsers } from "../../services/apiCalls";
 import { userDataCheck } from "../../pages/userSlice";
 import { useSelector, useDispatch } from "react-redux";
+import { UserCard } from "../../common/UserCard/UserCard";
 
 export const Admin = () => {
   const navigate = useNavigate();
@@ -11,14 +12,14 @@ export const Admin = () => {
   //Instanciamos Redux en modo LECTURA para user
   const reduxUserData = useSelector(userDataCheck);
 
-
+  useEffect(() => {
   bringUsers(reduxUserData.credentials)
     .then((resultado) => {
       setUsers(resultado.data.data);
     })
     .catch((error) => console.log(error));
+  }, []);
 
-  console.log("soy users", users);
 
   return (
     <>
@@ -32,15 +33,16 @@ export const Admin = () => {
         <div className="infinite-scroll-container">
           {users.map((user) => {
             return (
-              <DesignCard
+              <UserCard
                 // Key es una palabra reservada en React
-                key={design.id}
+                key={user.id}
                 ////////////////////////////////
-                id={design.id}
-                artist_name={design.Artist.name}
-                style={design.style}
-                picture={design.picture}
-                design={design}
+                id={user.id}
+                role_id={user.role_id}
+                name={user.name}
+                surnames={user.surnames}
+                phone={user.phone}
+                user={user}
               />
             );
           })}

@@ -1,0 +1,24 @@
+.userDesign { 
+    margin: 0;
+    padding: 0;
+
+    height: 25vh;
+    width: 35vw;
+
+    /* background-color:goldenrod; */
+    background-color: black;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+
+    border-radius: 1em;
+    border: 0.1em solid black;
+
+    transition: 0.2s;
+    cursor: pointer;
+}

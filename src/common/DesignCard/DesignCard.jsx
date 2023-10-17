@@ -9,6 +9,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 export const DesignCard = ({ id, artist_name, style, picture, design }) => {
+  
   //Instancia de Redux para el modo de ESCRITURA
   const dispatch = useDispatch();
   //Instancia de Navigate para React Router Dom y movimientos por la app
