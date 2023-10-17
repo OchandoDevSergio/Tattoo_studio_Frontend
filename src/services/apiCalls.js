@@ -4,6 +4,14 @@ export const bringDesigns = async () => {
   return await axios.get(`http://localhost:5000/designs`);
 };
 
+export const bringUsers = async (userData) => {
+  return await axios.get(`http://localhost:5000/users`, {
+    headers: {
+      authorization: "Bearer " + userData.token,
+    },
+  });
+};
+
 export const bringArtists = async () => {
   return await axios.get(`http://localhost:5000/artists`);
 };

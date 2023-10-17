@@ -132,14 +132,6 @@ export const Appointments = () => {
           )}
         </>
       )}
-      {/* {reduxUserData.credentials.userData.roleId === 2 && (
-          <>
-          <div className='subHeader'>
-            <div className='subheaderButton' onClick={() => navigate("/appointmentadd")}>Make Appointment</div>
-          </div>
-          <div>soy cliente</div>
-          </>
-        )} */}
       {reduxUserData.credentials.userData.roleId === 3 && (
         <>
           {appointments.length > 0 ? (

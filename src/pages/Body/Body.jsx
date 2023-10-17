@@ -10,6 +10,8 @@ import { Portfolio} from "../Portfolio/Portfolio";
 import { DesignAdd} from "../DesignAdd/DesignAdd";
 import { Appointments} from "../Appointments/Appointments"
 import { AppointmentAdd} from "../AppointmentAdd/AppointmentAdd"
+import { Admin} from "../Admin/Admin"
+import { AdminAdd } from "../AdminAdd/AdminAdd";
 
 export const Body = () => {
   return (
@@ -26,6 +28,8 @@ export const Body = () => {
         <Route path="/designadd" element={<DesignAdd />} />
         <Route path="/appointments" element={<Appointments />} />
         <Route path="/appointmentadd" element={<AppointmentAdd />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/adminadd" element={<AdminAdd />} />
       </Routes>
     </>
   );

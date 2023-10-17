@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react';
 import { bringDesigns } from '../../services/apiCalls';
 import { DesignCard } from '../../common/DesignCard/DesignCard';
-import { useDispatch } from "react-redux";
+//import { useDispatch } from "react-redux";
 
 import { Input } from "../../common/Input/Input";
 import { searchCriteria } from "../../services/apiCalls";
-import InfiniteScroll from 'react-infinite-scroll-component';
+//import InfiniteScroll from 'react-infinite-scroll-component';
 
 import './Tattoos.css'
 
 export const Tattoos = () => {
     const [designs, setDesigns] = useState([]);
     const [criteria, setCriteria] = useState("");
-    const dispatch = useDispatch();
+    //const dispatch = useDispatch();
   
       const inputHandler = (e) => {
         setCriteria(e.target.value);
@@ -77,7 +77,6 @@ export const Tattoos = () => {
              )}
 
          </div>)
-//mirar si a partir de aquí he puesto dos veces el mismo condicional
             : (<div className='home'>
                   <div className='title'>No designs found, insert a tattoo style</div>
                   </div>)
