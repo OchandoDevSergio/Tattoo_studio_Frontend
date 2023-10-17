@@ -20,6 +20,14 @@ export const Admin = () => {
     .catch((error) => console.log(error));
   }, []);
 
+  const updateMe = () => {
+    bringUsers(reduxUserData.credentials)
+    .then((resultado) => {
+      setUsers(resultado.data.data);
+    })
+    .catch((error) => console.log(error));
+  }
+
 
   return (
     <>
@@ -42,7 +50,9 @@ export const Admin = () => {
                 name={user.name}
                 surnames={user.surnames}
                 phone={user.phone}
+                email={user.email}
                 user={user}
+                update={updateMe}
               />
             );
           })}

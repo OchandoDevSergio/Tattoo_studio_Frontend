@@ -3,12 +3,13 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
 import { registerArtist } from "../../services/apiCalls";
+import { modifyUser } from "../../services/apiCalls";
 import { userDataCheck } from "../../pages/userSlice";
 import { Input } from "../Input/Input";
 import { useSelector } from "react-redux";
 
 
-export const UserCard = ({ id, role_id, name, surnames, phone, password, user, update}) => {
+export const UserCard = ({ id, role_id, name, surnames, phone, password, user, email, update}) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   //Instanciamos REDUX en modo lectura para los users
@@ -16,7 +17,8 @@ export const UserCard = ({ id, role_id, name, surnames, phone, password, user, u
   const showMe = () => {
     //dispatch(loadDesignData({ designData: design }));
     setShow(true)
-    console.log("soy artistRegisterBody", artistRegisterBody)
+    // console.log("soy artistRegisterBody", artistRegisterBody)
+    // console.log("soy modifyUserBody[0]", modifyUserBody[0])
   };
 
   const [artistRegisterBody, setArtistRegisterBody] = useState({
@@ -25,7 +27,16 @@ export const UserCard = ({ id, role_id, name, surnames, phone, password, user, u
     portfolio: "",
   });
 
-  //BINDEO
+  const modifyUserBody = useState({
+    id: user.id,
+    name: user.name,
+    surnames: user.surnames,
+    email: user.email,
+    phone: user.phone,
+    role_id: 3,
+  });
+
+  //BINDEO ARTIST BODY
   const inputHandler = (e) => {
     setArtistRegisterBody((prevState) => ({
       ...prevState,
@@ -34,6 +45,8 @@ export const UserCard = ({ id, role_id, name, surnames, phone, password, user, u
 
   const addArtistProfile = () => {
     registerArtist(artistRegisterBody, reduxUserData.credentials);
+    modifyUser(modifyUserBody[0], reduxUserData.credentials);
+    update();
     handleClose();
   };
 
@@ -64,6 +77,7 @@ export const UserCard = ({ id, role_id, name, surnames, phone, password, user, u
         <Modal.Title>Add artist profile to {name}</Modal.Title>
         </Modal.Header>
         <Modal.Body className="modal-design-body">
+        <div className="bold lettering">Artist porfolio</div>
         <div className="row inputRow">
             <Input
               type={"text"}

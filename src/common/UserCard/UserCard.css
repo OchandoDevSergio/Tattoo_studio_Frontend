@@ -47,3 +47,17 @@
     border: 0.1em solid black;
     color:rgb(198, 124, 71);
 }
+
+.modal-design-body {
+    height: 20vh;
+    width: 56.5vw;
+    background-color: black;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lettering {
+    font-family: Cambria ;
+}
