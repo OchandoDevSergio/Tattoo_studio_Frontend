@@ -69,10 +69,12 @@ export const PaymentAdd = () => {
 
   return (
     <div className="container-fluid register">
+      <div className="space"></div>
       <div className="row upRowRegister">
         <div className="col-1"></div>
         <div className="col-5">
           <div className="row inputRow">
+            <div className="scripting">Card number</div>
             <Input
               type={"text"}
               placeholder="Introduce your card number"
@@ -83,6 +85,7 @@ export const PaymentAdd = () => {
             />
           </div>
           <div className="row inputRow">
+            <div className="scripting">Valid thru</div>
             <Input
               type={"text"}
               placeholder="Introduce your card valid thru"

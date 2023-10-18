@@ -83,6 +83,7 @@ console.log ("soy reduxPaymentData en paymentmodify", reduxPaymentData);
         <div className="col-1"></div>
         <div className="col-5">
           <div className="row inputRow">
+          <div className="scripting">Card number</div>
             <Input
               type={"text"}
               placeholder=""
@@ -94,6 +95,7 @@ console.log ("soy reduxPaymentData en paymentmodify", reduxPaymentData);
             {modifyPaymentDataBodyError.cardNumberError}
           </div>
           <div className="row inputRow">
+            <div className="scripting">Valid thru</div>
             <Input
               type={"text"}
               placeholder=""

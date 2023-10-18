@@ -69,7 +69,7 @@ export const PortfolioCard = ({ id, artist_name, style, picture, design, update 
       <Modal.Title>Design Id number: {id}</Modal.Title>
       <Modal.Title>Hosting Link: {picture}</Modal.Title>
       </Modal.Header>
-      <Modal.Body className="modal-design-body">
+      <Modal.Body className="modal-design-body-portfolio">
       <img className="modalPicture" src={picture} alt={id} />
       </Modal.Body>
       <Modal.Footer className="modal-design-footer">

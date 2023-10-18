@@ -63,10 +63,12 @@ export const DesignAdd = () => {
 
   return (
     <div className="container-fluid register">
+      <div className="space"></div>
       <div className="row upRowRegister">
         <div className="col-1"></div>
         <div className="col-5">
           <div className="row inputRow">
+            <div className="scripting">Style</div>
             <Input
               type={"text"}
               placeholder="Introduce the design style"
@@ -77,6 +79,7 @@ export const DesignAdd = () => {
             />
           </div>
           <div className="row inputRow">
+            <div className="scripting">Hosting link</div>
             <Input
               type={"text"}
               placeholder="Introduce the designs hosting link"

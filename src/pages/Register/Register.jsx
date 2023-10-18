@@ -36,6 +36,7 @@ export const Register = () => {
 
   const registerMe = () => {
     if (registerBody.password == password2.password_repeat) {
+      console.log("soy registerbody", registerBody)
       registerUser(registerBody)
         .then((resultado) => {
           console.log(resultado);

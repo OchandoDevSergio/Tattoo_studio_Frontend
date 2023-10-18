@@ -140,6 +140,7 @@ export const Profile = () => {
         {reduxUserData.credentials.userData.roleId !== 3 && (
               //Este && haría referencia a un entonces
               <div className="row inputRow">
+              <div className="scripting">Name</div>
               <Input
                 type={"text"}
                 placeholder=""
@@ -152,6 +153,7 @@ export const Profile = () => {
               </div>
             )}
           <div className="row inputRow">
+            <div className="scripting">e-mail</div>
             <Input
               type={"email"}
               placeholder=""
@@ -163,6 +165,7 @@ export const Profile = () => {
             {modifyUserBodyError.emailError}
           </div>
           <div className="row inputRow">
+            <div className="scripting">Phone</div>
             <Input
               type={"number"}
               placeholder=""
@@ -178,6 +181,7 @@ export const Profile = () => {
             {reduxUserData.credentials.userData.roleId !== 3 && (
               //Este && haría referencia a un entonces
               <div className="row inputRow">
+              <div className="scripting">Surnames</div>  
               <Input
                 type={"text"}
                 placeholder=""
@@ -190,6 +194,7 @@ export const Profile = () => {
             </div>
             )}
           <div className="row inputRow">
+          <div className="scripting">Password</div>
             <Input
               type={"password"}
               placeholder="Introduce your new password"
@@ -201,6 +206,7 @@ export const Profile = () => {
             {modifyUserBodyError.passwordError}
           </div>
           <div className="row inputRow">
+          <div className="scripting">Password</div>
             <Input
               type={"password"}
               placeholder="Repeat your new password"
