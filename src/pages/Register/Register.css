@@ -14,7 +14,7 @@
 }
 
 .downRowRegister {
-    height: 25vh;
+    height: 20vh;
 
     display: flex;
     justify-content: center;
@@ -52,4 +52,16 @@
     /* background-color: goldenrod; */
     color:black;
     
+}
+
+.space {
+    height: 15vh;
+    width: 100vw;
+}
+
+.scripting {
+    font-family: Cambria ;
+    font-size: large;
+    display:flex;
+    justify-content: center;
 }

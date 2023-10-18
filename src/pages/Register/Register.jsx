@@ -61,10 +61,12 @@ export const Register = () => {
 
   return (
     <div className="container-fluid register">
+      <div className="space"></div>
       <div className="row upRowRegister">
         <div className="col-1"></div>
         <div className="col-5">
           <div className="row inputRow">
+            <div className="scripting">Name</div>
             <Input
               type={"text"}
               placeholder="Introduce your name"
@@ -75,6 +77,7 @@ export const Register = () => {
             />
           </div>
           <div className="row inputRow">
+            <div className="scripting">e-mail</div>
             <Input
               type={"email"}
               placeholder="Introduce your e-mail"
@@ -85,6 +88,7 @@ export const Register = () => {
             />
           </div>
           <div className="row inputRow">
+            <div className="scripting">Phone</div>
             <Input
               type={"number"}
               placeholder="Introduce your phone number"
@@ -97,6 +101,7 @@ export const Register = () => {
         </div>
         <div className="col-5">
         <div className="row inputRow">
+            <div className="scripting">Surnames</div>
             <Input
               type={"text"}
               placeholder="Introduce your surnames"
@@ -107,6 +112,7 @@ export const Register = () => {
             />
           </div>
           <div className="row inputRow">
+            <div className="scripting">Password</div>
             <Input
               type={"password"}
               placeholder="Introduce your password"
@@ -117,6 +123,7 @@ export const Register = () => {
             />
           </div>
           <div className="row inputRow">
+            <div className="scripting">Password</div>
             <Input
               type={"password"}
               placeholder="Repeat your password"

@@ -118,7 +118,6 @@ export const modifyUser = async (modifyUserBody, userData) => {
 
 export const deleteTattoo= async (tattooId, userData) => {
 
-
   let erase = tattooId.id
 
   return axios.delete(`http://localhost:5000/designs/${erase}`, {
