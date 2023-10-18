@@ -8,3 +8,14 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+
+.appointments {
+    height: 83vh;
+    width: 100vw;
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image:url(https://i.ibb.co/wBRSpSF/fondo2.jpg);
+}

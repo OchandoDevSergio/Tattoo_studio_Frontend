@@ -102,10 +102,12 @@ export const AppointmentAdd = () => {
       {reduxUserData?.credentials?.userData?.roleId === 1 && (
         <>
           <div className="container-fluid register">
+          <div className="space"></div>
             <div className="row upRowRegister">
               <div className="col-1"></div>
               <div className="col-5">
                 <div className="row inputRow">
+                  <div className="scripting">Customer id</div>
                   <Input
                     type={"text"}
                     placeholder="Introduce the customer user identification number"
@@ -116,6 +118,7 @@ export const AppointmentAdd = () => {
                   />
                 </div>
                 <div className="row inputRow">
+                  <div className="scripting">Artist id</div>
                   <Input
                     type={"text"}
                     placeholder="Introduce the artist identification number"
@@ -126,6 +129,7 @@ export const AppointmentAdd = () => {
                   />
                 </div>
                 <div className="row inputRow">
+                  <div className="scripting">Date</div>
                   <Input
                     type={"text"}
                     placeholder="Introduce the appointment date"
@@ -136,6 +140,7 @@ export const AppointmentAdd = () => {
                   />
                 </div>
                 <div className="row inputRow">
+                  <div className="scripting">Hour</div>
                   <Input
                     type={"text"}
                     placeholder="Introduce the appointment hour"
@@ -163,6 +168,7 @@ export const AppointmentAdd = () => {
             <div className="row upRowAppointment">
               <div className="col">
                 <div className="row inputRow">
+                  <div className="scripting">Artist</div>
                   <select className=" artistDropdown" onChange={handleArtistChange}>
                     <option value="Select an Artist"> -- Select an Artist -- </option>
                     {artists.map((artist) => <option value={artist.id}>{artist.name}</option>)}
@@ -171,6 +177,7 @@ export const AppointmentAdd = () => {
               </div>
               <div className="col">
                 <div className="row inputRow">
+                  <div className="scripting">Date</div>
                   <Input
                     type={"text"}
                     placeholder="Introduce the appointment date"
@@ -181,6 +188,7 @@ export const AppointmentAdd = () => {
                   />
                 </div>
                 <div className="row inputRow">
+                  <div className="scripting">Hour</div>
                   <Input
                     type={"text"}
                     placeholder="Introduce the appointment hour"
@@ -212,6 +220,7 @@ export const AppointmentAdd = () => {
                 </div>
                 <div className="col">
                   <div className="row inputRow">
+                    <div className="scripting">CVV/CVC</div>
                     <Input
                       type={"number"}
                       placeholder="Introduce the CVV/CVC number"

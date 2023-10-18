@@ -48,3 +48,15 @@
     border-radius: 10em;
     border: solid goldenrod;
 }
+
+.space {
+    height: 15vh;
+    width: 100vw;
+}
+
+.scripting {
+    font-family: Cambria ;
+    font-size: large;
+    display:flex;
+    justify-content: center;
+}

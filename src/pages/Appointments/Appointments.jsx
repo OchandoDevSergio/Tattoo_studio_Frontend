@@ -152,7 +152,9 @@ export const Appointments = () => {
       )}
       {reduxUserData?.credentials?.userData?.roleId === 3 && (
         <>
+        
           {appointments?.length > 0 ? (
+            <div className="appointments">
             <div className="infinite-scroll-container">
               {appointments.map((appointment) => {
                 return (
@@ -175,7 +177,7 @@ export const Appointments = () => {
                   />
                 );
               })}
-            </div>
+            </div></div>
           ) : (
             <div className="appointments">
               <div className="title">
