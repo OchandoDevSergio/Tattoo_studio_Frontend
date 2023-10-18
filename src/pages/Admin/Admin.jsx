@@ -16,6 +16,12 @@ export const Admin = () => {
     if (reduxUserData.credentials?.userData?.roleId !== 1) {
       navigate("/");
     }
+  }, []);
+
+  useEffect(() => {
+    if (reduxUserData.credentials?.userData?.roleId !== 1) {
+      navigate("/");
+    }
   }, [reduxUserData]);
 
   useEffect(() => {

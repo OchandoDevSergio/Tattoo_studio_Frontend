@@ -26,9 +26,10 @@ export const Profile = () => {
       reduxUserData.credentials?.userData?.roleId !== 2 &&
       reduxUserData.credentials?.userData?.roleId !== 3
     ) {
+      console.log("aqui entro??????????")
       navigate("/");
     }
-  }, [reduxUserData]);
+  }, []);
 
 
   const [modifyUserBody, setModifyUserBody] = useState({
@@ -137,7 +138,7 @@ export const Profile = () => {
         <div className="col-1"></div>
         <div className="col-5">
 
-        {reduxUserData.credentials.userData.roleId !== 3 && (
+        {reduxUserData?.credentials?.userData?.roleId !== 3 && (
               //Este && haría referencia a un entonces
               <div className="row inputRow">
               <div className="scripting">Name</div>
@@ -178,7 +179,7 @@ export const Profile = () => {
           </div>
         </div>
         <div className="col-5">
-            {reduxUserData.credentials.userData.roleId !== 3 && (
+            {reduxUserData?.credentials?.userData?.roleId !== 3 && (
               //Este && haría referencia a un entonces
               <div className="row inputRow">
               <div className="scripting">Surnames</div>  
@@ -228,7 +229,7 @@ export const Profile = () => {
       </div>
       {(reduxPaymentData.paymentDataData?.data?.data == null ) ? (
             <>
-            {reduxUserData.credentials.userData.roleId === 2 && (
+            {reduxUserData?.credentials?.userData?.roleId === 2 && (
               <div className="row downRowPayment">
                 <div className="buttonBody" onClick={() => navigate("/paymentadd")}>
                  Add payment data

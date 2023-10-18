@@ -13,11 +13,21 @@ import { bringArtists } from "../../services/apiCalls";
 export const AppointmentAdd = () => {
   //Instanciamos Redux en modo LECTURA user
   const reduxUserData = useSelector(userDataCheck);
-
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   //Código para traer los datos de pago
   const customerId = reduxUserData?.credentials?.userData?.userId;
+
+  useEffect(() => {
+    if (
+      reduxUserData.credentials?.userData?.roleId !== 1 &&
+      reduxUserData.credentials?.userData?.roleId !== 2
+    ) {
+      console.log("aqui entro??????????")
+      navigate("/");
+    }
+  }, []);
 
   const searchPaymentData = (paymentDatas) => {
     dispatch(loadPaymentData({ paymentDataData: paymentDatas }));
@@ -33,9 +43,9 @@ export const AppointmentAdd = () => {
 
   const reduxPaymentData = useSelector(paymentDataCheck);
 
-  const navigate = useNavigate();
+
   const [newAppointmentBody, setNewAppointmentBody] = useState({
-    user_id: reduxUserData.credentials.userData.roleId === 1 ? "" : customerId,
+    user_id: reduxUserData?.credentials?.userData?.roleId === 1 ? "" : customerId,
     artist_id: "",
     date: "",
     hour: "",
@@ -89,7 +99,7 @@ export const AppointmentAdd = () => {
 
   return (
     <>
-      {reduxUserData.credentials.userData.roleId === 1 && (
+      {reduxUserData?.credentials?.userData?.roleId === 1 && (
         <>
           <div className="container-fluid register">
             <div className="row upRowRegister">
@@ -146,7 +156,7 @@ export const AppointmentAdd = () => {
           </div>
         </>
       )}
-      {reduxUserData.credentials.userData.roleId === 2 && (
+      {reduxUserData?.credentials?.userData?.roleId === 2 && (
         <>
           <div className="container-fluid registerAppointment">
             <div className="row subheaderRow"></div>

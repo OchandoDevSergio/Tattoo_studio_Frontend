@@ -19,8 +19,19 @@ export const Appointments = () => {
   const userId = reduxUserData?.credentials?.userData?.userId;
 
   useEffect(() => {
+    if (
+      reduxUserData.credentials?.userData?.roleId !== 1 &&
+      reduxUserData.credentials?.userData?.roleId !== 2 &&
+      reduxUserData.credentials?.userData?.roleId !== 3
+    ) {
+      console.log("aqui entro??????????")
+      navigate("/");
+    }
+  }, []);
+
+  useEffect(() => {
     if (appointments.length === 0) {
-      switch (reduxUserData.credentials.userData.roleId) {
+      switch (reduxUserData?.credentials?.userData?.roleId) {
         case 1:
 
           bringAllAppointments(reduxUserData.credentials)
@@ -95,7 +106,7 @@ export const Appointments = () => {
 
   return (
     <>
-      {reduxUserData.credentials.userData.roleId !== 3 && (
+      {reduxUserData?.credentials?.userData?.roleId !== 3 && (
         <>
           <div className="subHeader">
             <div
@@ -105,10 +116,9 @@ export const Appointments = () => {
               Make Appointment
             </div>
           </div>
-          {appointments.length > 0 ? (
+          {appointments?.length > 0 ? (
             <div className="infinite-scroll-container">
               {appointments.map((appointment) => {
-                console.log(appointment.User.name, "hijueputaaaaaaaa")
                 return (
                   <AppointmentCard
                     // Key es una palabra reservada en React
@@ -140,9 +150,9 @@ export const Appointments = () => {
           )}
         </>
       )}
-      {reduxUserData.credentials.userData.roleId === 3 && (
+      {reduxUserData?.credentials?.userData?.roleId === 3 && (
         <>
-          {appointments.length > 0 ? (
+          {appointments?.length > 0 ? (
             <div className="infinite-scroll-container">
               {appointments.map((appointment) => {
                 return (
