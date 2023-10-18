@@ -90,7 +90,7 @@ export const Appointments = () => {
   }}
 
   useEffect(() => { 
-    console.log("soy appointments", appointments);
+    // console.log("soy appointments", appointments[0].User);
    }, [appointments]);
 
   return (
@@ -108,6 +108,7 @@ export const Appointments = () => {
           {appointments.length > 0 ? (
             <div className="infinite-scroll-container">
               {appointments.map((appointment) => {
+                console.log(appointment.User.name, "hijueputaaaaaaaa")
                 return (
                   <AppointmentCard
                     // Key es una palabra reservada en React
@@ -115,7 +116,7 @@ export const Appointments = () => {
                     ////////////////////////////////
                     id={appointment.id}
                     artist_name={appointment.Artist.name}
-                    user_id={appointment.User.id}
+                    // user_id={appointment.User.id}
                     artist_id={appointment.Artist.id}
                     date={appointment.date}
                     hour={appointment.hour}
