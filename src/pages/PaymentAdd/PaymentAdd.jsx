@@ -1,4 +1,4 @@
-import './PaymentAdd.css'
+import "./PaymentAdd.css";
 import { Input } from "../../common/Input/Input";
 import { useState, useEffect } from "react";
 import { createNewPaymentData } from "../../services/apiCalls";
@@ -9,18 +9,16 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 export const PaymentAdd = () => {
-    const reduxUserData = useSelector(userDataCheck);
-    //const datosReduxUser = useSelector(userDataCheck);
-    const reduxPaymentData = useSelector(paymentDataCheck);
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
+  const reduxUserData = useSelector(userDataCheck);
+  const reduxPaymentData = useSelector(paymentDataCheck);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-
-    useEffect(() => {
-      if (reduxUserData.credentials?.userData?.roleId !== 2) {
-        navigate("/");
-      }
-    }, []);
+  useEffect(() => {
+    if (reduxUserData.credentials?.userData?.roleId !== 2) {
+      navigate("/");
+    }
+  }, []);
 
   const [registerPaymentBody, setRegisterPaymentBody] = useState({
     cardNumber: "",
@@ -28,9 +26,7 @@ export const PaymentAdd = () => {
     user_id: reduxUserData.credentials?.userData?.userId,
   });
 
-  //console.log ("soy reduxUserData en payment add", reduxUserData);
-
-  //BINDEO
+  //BIND
   const inputHandler = (e) => {
     setRegisterPaymentBody((prevState) => ({
       ...prevState,
@@ -38,28 +34,18 @@ export const PaymentAdd = () => {
     }));
   };
 
-  // modifyUser(modifyUserBody, reduxUserData.credentials)
-  // .then((resultado) => {
-  //   const newUserData = {
-  //     token: reduxUserData?.credentials?.token,
-  //     userData: resultado.data.data,
-  //   };
-
   const registerPaymentData = () => {
     createNewPaymentData(registerPaymentBody, reduxUserData.credentials)
-        .then((resultado) => {
-          const newPaymentDataData = {
-            paymentDataData: resultado.data,
-          };
-    
-          dispatch(changePaymentData({ paymentDataData: newPaymentDataData }));
-          console.log("soy paymentdatadata al final de modify", reduxPaymentData.paymentDataData)
-          navigate("/");
-        })
-        .catch((error) => console.log(error));
-    };
+      .then((resultado) => {
+        const newPaymentDataData = {
+          paymentDataData: resultado.data,
+        };
 
-
+        dispatch(changePaymentData({ paymentDataData: newPaymentDataData }));
+        navigate("/");
+      })
+      .catch((error) => console.log(error));
+  };
 
   useEffect(() => {
     if (reduxUserData.credentials?.userData?.roleId !== 2) {

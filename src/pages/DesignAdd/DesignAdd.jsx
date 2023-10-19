@@ -11,7 +11,6 @@ export const DesignAdd = () => {
   const reduxUserData = useSelector(userDataCheck);
   const userId = reduxUserData?.credentials?.userData?.userId;
   const navigate = useNavigate();
-
   const [artist, setArtist] = useState([]);
 
   useEffect(() => {
@@ -37,7 +36,7 @@ export const DesignAdd = () => {
     picture: "",
   });
 
-  //BINDEO
+  //BIND
   const inputHandler = (e) => {
     setaddDesignBody((prevState) => ({
       ...prevState,
@@ -47,7 +46,6 @@ export const DesignAdd = () => {
   };
 
   const addDesign = () => {
-    console.log("soy addDesignBody", addDesignBody);
     registerDesign(addDesignBody, reduxUserData.credentials)
         .then((resultado) => {
           navigate("/portfolio");

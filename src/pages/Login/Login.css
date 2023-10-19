@@ -63,9 +63,7 @@
 }
 
 .buttonBody:hover {
-
     transition: 0.2s;
-    /* background-color: goldenrod; */
     color:black;
     
 }

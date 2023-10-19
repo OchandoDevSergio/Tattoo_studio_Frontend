@@ -6,7 +6,6 @@
     height: 25vh;
     width: 35vw;
 
-    /* background-color:goldenrod; */
     background-color: black;
     color: white;
 
@@ -25,7 +24,6 @@
 }
 
 .appointmentDesign:hover {
-
     transition: 0.2s;
     background-color:goldenrod;
     border: 0.1em solid black;
@@ -86,7 +84,7 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    font-family: Cambria ;
+    font-family: Cambria;
 }
 
 .modalConfirm-design-footer {
@@ -102,11 +100,9 @@
 .spacer {
     height: 1vh;
     width: 10vw;
-    /* background-color: blue; */
 }
 
 .modalButton {
-
     margin: 1em;
 
     color: white;
@@ -123,7 +119,6 @@
 }
 
 .modalButton:hover {
-
     transition: 0.2s;
     color: rgb(198, 124, 71);
 }

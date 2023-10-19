@@ -24,7 +24,6 @@ export const AppointmentAdd = () => {
       reduxUserData.credentials?.userData?.roleId !== 1 &&
       reduxUserData.credentials?.userData?.roleId !== 2
     ) {
-      console.log("aqui entro??????????")
       navigate("/");
     }
   }, []);
@@ -43,9 +42,9 @@ export const AppointmentAdd = () => {
 
   const reduxPaymentData = useSelector(paymentDataCheck);
 
-
   const [newAppointmentBody, setNewAppointmentBody] = useState({
-    user_id: reduxUserData?.credentials?.userData?.roleId === 1 ? "" : customerId,
+    user_id:
+      reduxUserData?.credentials?.userData?.roleId === 1 ? "" : customerId,
     artist_id: "",
     date: "",
     hour: "",
@@ -66,15 +65,13 @@ export const AppointmentAdd = () => {
   }, []);
 
   const handleArtistChange = (e) => {
-    setNewAppointmentBody(
-      {
-        user_id: customerId,
-        artist_id: e.target.value
-      }
-    )
+    setNewAppointmentBody({
+      user_id: customerId,
+      artist_id: e.target.value,
+    });
   };
 
-  //BINDEO
+  //BIND
   const inputHandler = (e) => {
     setNewAppointmentBody((prevState) => ({
       ...prevState,
@@ -90,9 +87,6 @@ export const AppointmentAdd = () => {
   };
 
   const registerAppointment = () => {
-
-    console.log(newAppointmentBody, "a verrrr");
-
     createAppointment(newAppointmentBody, reduxUserData.credentials);
     navigate("/appointments");
   };
@@ -102,7 +96,7 @@ export const AppointmentAdd = () => {
       {reduxUserData?.credentials?.userData?.roleId === 1 && (
         <>
           <div className="container-fluid register">
-          <div className="space"></div>
+            <div className="space"></div>
             <div className="row upRowRegister">
               <div className="col-1"></div>
               <div className="col-5">
@@ -169,9 +163,17 @@ export const AppointmentAdd = () => {
               <div className="col">
                 <div className="row inputRow">
                   <div className="scripting">Artist</div>
-                  <select className=" artistDropdown" onChange={handleArtistChange}>
-                    <option value="Select an Artist"> -- Select an Artist -- </option>
-                    {artists.map((artist) => <option value={artist.id}>{artist.name}</option>)}
+                  <select
+                    className=" artistDropdown"
+                    onChange={handleArtistChange}
+                  >
+                    <option value="Select an Artist">
+                      {" "}
+                      -- Select an Artist --{" "}
+                    </option>
+                    {artists.map((artist) => (
+                      <option value={artist.id}>{artist.name}</option>
+                    ))}
                   </select>
                 </div>
               </div>

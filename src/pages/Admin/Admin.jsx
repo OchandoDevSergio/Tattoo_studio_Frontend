@@ -25,21 +25,20 @@ export const Admin = () => {
   }, [reduxUserData]);
 
   useEffect(() => {
-  bringUsers(reduxUserData.credentials)
-    .then((resultado) => {
-      setUsers(resultado.data.data);
-    })
-    .catch((error) => console.log(error));
+    bringUsers(reduxUserData.credentials)
+      .then((resultado) => {
+        setUsers(resultado.data.data);
+      })
+      .catch((error) => console.log(error));
   }, []);
 
   const updateMe = () => {
     bringUsers(reduxUserData.credentials)
-    .then((resultado) => {
-      setUsers(resultado.data.data);
-    })
-    .catch((error) => console.log(error));
-  }
-
+      .then((resultado) => {
+        setUsers(resultado.data.data);
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
     <>

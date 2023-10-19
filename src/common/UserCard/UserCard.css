@@ -5,7 +5,6 @@
     height: 25vh;
     width: 35vw;
 
-    /* background-color:goldenrod; */
     background-color: black;
     color: white;
 
@@ -19,12 +18,9 @@
     border-radius: 1em;
     border: 0.1em solid black;
 
-    /* transition: 0.2s;
-    cursor: pointer; */
 }
 
 .userDesign:hover {
-
     transition: 0.2s;
     background-color:goldenrod;
     border: 0.1em solid black;

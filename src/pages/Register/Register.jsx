@@ -1,6 +1,5 @@
-import { Input } from "../../common/Input/Input";
 import "./Register.css";
-
+import { Input } from "../../common/Input/Input";
 import { useState, useEffect } from "react";
 import { registerUser } from "../../services/apiCalls";
 import { userDataCheck } from "../userSlice";
@@ -8,6 +7,19 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 export const Register = () => {
+  const reduxUserData = useSelector(userDataCheck);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (reduxUserData.credentials?.userData?.roleId == 1) {
+      navigate("/");
+    } else if (reduxUserData.credentials?.userData?.roleId == 2) {
+      navigate("/");
+    } else if (reduxUserData.credentials?.userData?.roleId == 3) {
+      navigate("/");
+    }
+  }, [reduxUserData]);
+
   const [registerBody, setRegisterBody] = useState({
     role_id: 2,
     name: "",
@@ -21,7 +33,7 @@ export const Register = () => {
     password_repeat: "",
   });
 
-  //BINDEO
+  //BIND
   const inputHandler = (e) => {
     setRegisterBody((prevState) => ({
       ...prevState,
@@ -36,29 +48,15 @@ export const Register = () => {
 
   const registerMe = () => {
     if (registerBody.password == password2.password_repeat) {
-      console.log("soy registerbody", registerBody)
       registerUser(registerBody)
         .then((resultado) => {
-          console.log(resultado);
           navigate("/");
         })
         .catch((error) => console.log(error));
     } else {
       console.log("los passwords no coinciden");
     }
-    };
-
-  const reduxUserData = useSelector(userDataCheck);
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (reduxUserData.credentials?.userData?.roleId == 1) {
-      navigate("/");
-    } else if (reduxUserData.credentials?.userData?.roleId == 2) {
-      navigate("/");
-    } else if (reduxUserData.credentials?.userData?.roleId == 3) {
-      navigate("/");
-    }
-  }, [reduxUserData]);
+  };
 
   return (
     <div className="container-fluid register">
@@ -101,7 +99,7 @@ export const Register = () => {
           </div>
         </div>
         <div className="col-5">
-        <div className="row inputRow">
+          <div className="row inputRow">
             <div className="scripting">Surnames</div>
             <Input
               type={"text"}

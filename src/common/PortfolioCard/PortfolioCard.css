@@ -1,13 +1,10 @@
 
 .cardDesign {
-    
     margin: 2em;
     padding: 0em;
-
     height: 55vh;
     width: 27vw;
 
-    /* background-color:goldenrod; */
     background-color: black;
     color: white;
 
@@ -28,9 +25,8 @@
 }
 
 .cardDesign:hover {
-
     transition: 0.2s;
-    /* background-color: black; */
+
     background-color:goldenrod;
     border: 0.1em solid black;
 }
@@ -115,11 +111,10 @@
 .spacer {
     height: 1vh;
     width: 10vw;
-    /* background-color: blue; */
+
 }
 
 .modalButton {
-
     margin: 1em;
 
     color: white;
@@ -136,7 +131,6 @@
 }
 
 .modalButton:hover {
-
     transition: 0.2s;
     color: rgb(198, 124, 71);
 }
