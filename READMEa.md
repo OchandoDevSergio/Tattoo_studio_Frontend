@@ -38,23 +38,23 @@ Además la aplicación habría de distinguir, con el inicio de sesión, entre un
 
 ### Vistas
 
-Al entrar en la aplicación nos encontramos con la vista **Home**, en la que se nos mostraría a priori un conjunto de tarjetas con datos e imágenes de los vehículos que nutren el catálogo de la base de datos de la aplicación. Sin embargo al realizar una búsqueda de una marca o modelo de automóvil a través del input que alberga el encabezado, esta vista se limitará a mostrar los vehículos que coincidan con los criterios de la búsqueda.
+Todas las vistas se componen de: un cabezal en el que encontramos un botón con el logo del estudio que enlaza a la vista "Home", y distintos botones que varían en función del rol propio del usuario que inicie sesión; un body en el que se presentan las distintas vistas por las que naveguemos y por último un simple pie de página señalando el año del copyright.
 
-![home](https://i.ibb.co/9n7ZZZZ/Home-logeado.jpg)
+Al entrar en la aplicación nos encontramos con la vista **Home**, en la que se nos muestra un carousel con imágenes del estudio para que el visitante pueda ver las instalaciones.
 
-![búsqueda](https://i.ibb.co/VjGb89P/home-b-squeda-logeado.jpg)
+![home](https://i.ibb.co/qFGQ6MF/home.jpg)
 
-La vista **Showcar** nos muestra en mayor detalle la imagen y los datos ampliados de un único vehículo seleccionado.
+La vista **Tattoos** cuenta con un subencabezado con una barra de búsqueda y nos muestra un infinite scroll en el que se contienen todos los diseños de tatuajes que podemos encontrar en los portfolios de los distintos artistas. Si pinchamos en la teajeta de algún diseño, se abrirá un modal que nos mostrará en detalle la imagen del diseño y los datos asociados. Además si introducimos un criterio de búsqueda en la barra del subencabezado, sólo se nos mostrarán aquellos diseños cuyo estilo indexado coincida con el criterio de búsqueda introducido.
 
-![showcar](https://i.ibb.co/QjkqWz9/showcar.jpg)
+![tattoos](https://i.ibb.co/pvyctwG/tattoossearch.jpg)
 
-La vista **Register** nos muestra una serie de inputs a trevés de los cuales podremos introducir nuestros datos y registrarnos como usuario en la base de datos de la aplicación.
+La vista **Register** nos muestra una serie de inputs a trevés de los cuales podremos introducir nuestros datos y registrarnos como usuario con el rol cliente en la base de datos de la aplicación.
 
-![register](https://i.ibb.co/18B27ny/register.jpg)
+![register](https://i.ibb.co/ZgqCJp3/register.jpg)
 
 La vista **Login** nos solicita nuestras credenciales de usuarios para iniciar sesión.
 
-![login](https://i.ibb.co/w06TjyK/login.jpg)
+![login](https://i.ibb.co/M5XtJ8V/login.jpg)
 
 La vista **Admin** muestra a los administradores de la aplicación las opciones a las que tienen acceso privilegiado.
 

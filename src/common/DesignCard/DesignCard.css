@@ -64,14 +64,18 @@
     font-family: Cambria ;
 }
 
-.modal-design-header {
+.modalConfirm-design-header {
     height: 10vh;
     width: 56.5vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     background-color: black;
 }
 
-.modal-design-body {
-    height: 80vh;
+.modal-design-body-tattoo {
+    height: 70vh;
     width: 56.5vw;
     background-color: black;
     display:flex;
