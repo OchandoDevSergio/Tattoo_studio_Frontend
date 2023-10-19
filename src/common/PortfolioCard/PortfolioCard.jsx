@@ -15,7 +15,7 @@ export const PortfolioCard = ({ id, artist_name, style, picture, design, update 
   const dispatch = useDispatch();
   //Instanciamos REDUX en modo lectura para los users
   const reduxUserData = useSelector(userDataCheck);
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const handleClose = () => setShow(false);

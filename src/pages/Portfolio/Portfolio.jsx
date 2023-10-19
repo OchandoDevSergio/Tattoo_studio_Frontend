@@ -13,7 +13,7 @@ export const Portfolio = () => {
   const [designs, setDesigns] = useState([]);
   const [artist, setArtist] = useState([]);
   const navigate = useNavigate();
-  const [counter, setCounter] = useState([]);
+  //const [counter, setCounter] = useState([]);
   //console.log("soy userId", userId);
 
   useEffect(() => {
