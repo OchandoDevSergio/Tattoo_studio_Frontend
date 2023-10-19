@@ -56,23 +56,39 @@ La vista **Login** nos solicita nuestras credenciales de usuarios para iniciar s
 
 ![login](https://i.ibb.co/M5XtJ8V/login.jpg)
 
-La vista **Admin** muestra a los administradores de la aplicación las opciones a las que tienen acceso privilegiado.
+La vista **Profile** varía en función del rol de las credenciales con las que el usuario haya iniciado sesión. Si se trata de un administrador o un artista, se mostrarán una serie de inputs para cambiar la información de usuario en la base de datos. En cambio si se trata de un cliente, nos dará también la opción de acceder a una vista desde la que introducir nuestros datos de pago, o modificarlos si es que ya existen en la base de datos.
 
-![admin](https://i.ibb.co/tK72x4Z/admin.jpg)
+![profile](https://i.ibb.co/nkpsWSp/profile.jpg)
 
-La vista **Newcar** permite a los administradores de la aplicación introducir nuevos vehículos en la base de datos de la misma.
+La vista **Appointments** varía en función del rol de las credenciales con las que el usuario haya iniciado sesión. Si se trata de un artista, simplemente se nos mostrará un infinite scroll con las distintas citas que se hayan concertado con él, ampliando sus tarjetas en un modal si se hace click sobre las mismas. En cambio si se trata de un cliente o administrador también nos aparecerá un subencabezado con un botón, que al hacer click nos conducirá a otra vista desde la que concertar una cita. Además tanto clientes como administradores tienen la opción de eliminar citas en el modal que emerge al hacer click sobre la tarjeta de una cita.
 
-![newcar](https://i.ibb.co/SRtsf61/lntroduce-car.jpg)
+![appointments](https://i.ibb.co/xzHMzJJ/appointments.jpg)
 
-La vista **Userslist** muestra tarjetas a los administradores con los datos de todos los usuarios registrados en la base de datos (obviando sus passwords).
+![appointmentsadd](https://i.ibb.co/6nmZ14g/appointmentsaddcustomer.jpg)
 
-![userslist](https://i.ibb.co/gRwZTyj/userslist.jpg)
+La vista **Portfolio** es sólo accesible para los artistas y muestra un subencabezado con el nombre del artista y un botón que al pinchar conduce a otra vista desde la que añadir diseños asociados al artista en la base de datos. Bajo el subencabezado se nos presenta un infinite scroll con los diseños del artista, en los que podemos pinchar para que nos aparezca un modal en detalle, desde el que además podemos eliminarlos de la base de datos.
 
-La vista **Profile** pemrite al usuario registrado, ya tenga el rol de cliente o el de administrador, cambiar los datos que le constan en la base de datos.
+![portfolio](https://i.ibb.co/kmnMgP2/portfolio.jpg)
 
-![profile](https://i.ibb.co/grTgWgh/profile.jpg)
+La vista **Admin** sólo accesible para usuarios registrados con el rol de administrador, nos muestra: un subencabezado con la opción de desplazarnos a otra vista desde la que añadir nuevos usuarios a la base de datos que compartan el rol de administrador; así como un infinite scroll con tarjetas en que se muestran las fichas de todos los usuarios existentes en la base de datos. Además cueando esas fichas corresponden a un usuario con el rol de cliente, nos presenta la opción de añadirle una ficha de artista y cambiar su rol, a través de un modal.
+
+![admin](https://i.ibb.co/ftbfJt0/admin.jpg)
 
 ### Funcionamiento
+
+Al acceder a la aplicación se cargan 3 elementos: siendo el que aparece en una posición superior un elemento común "Header", que consiste en un encabezado reactivo a si se ha iniciado sesión y el rol de usuario correspondiente; en posición intermedia un "Body" en el que se van cargando las distinatas vistas por las que vamos navegando y finalmente un "footer" estático.
+
+En el encabezado encontramos un botón que emplea la funcionalidad *useNavigate* para dirigirnos a la vista Home y una serie de botones adicionales que varían dependiendo del rol. Si no hemos iniciado sesión los botones serán TATTOOS, LOG IN y REGISTER, conduciéndonos cada uno a sus respectivas vistas; si hemos iniciado sesión con el rol *customer* (cliente), se mantiene el botón TATTOOS, se añade APPOINTMENTS para conducirnos a la respectiva vista, se sustituye REGISTER por un botón con el nombre del usuario importado de *Redux* que nos conduce a la vista profile y también se sustituye LOG IN por LOG OUT que cerraría sesión. Si hemos iniciado sesión con el rol *artist* (artista), además de la configuración del encabezado para clientes, aparece PORTFOLIO que nos conduciría a la respectiva vista. Por último si hemos iniciado sesión con el rol *administrator* (administrador), además de la configuración del encabezado para clientes, aparece ADMIN que nos conduciría a la respectiva vista.
+
+La vista Home funciona con un **Carousel** importado de *react-bootstrap* en el que se han realizado las modificaciones pertinentes para adaptarlo a las prestaciones y la estética deseada.
+
+La vista Tattoos funciona con un *hook* del tipo *useEffect* que contiene un condicional vinculado a la barra de búsqueda del subencabezado. Cuando la barra de búsqueda se encuentra vacía (como sucede al entrar en la vista), se acciona una llamada a la base de datos que traería todos los diseños que constan en ella. Cuando por el contrario se ha introducido un criterio de búsqueda en la barra se acciona un **debounce** (desarrollado en JS vanilla con un *setTimeout*) y se procede con una llamada a la base de datos que traería todos los diseños cuyo campo "style" coincida con el criterio de búsqueda introducido, aunque éste no suponga el *string* completo que haya en el campo "style" de la tabla diseños. Cabe señalar que estas llamadas a la base de datos son **llamadas multitabla**, que vinculan el *id* del artista de la tabla "designs", con el id de la tabla "artists" para traernos todos los datos que queremos mostrar en pantalla de cada diseño. Cada vez que se recibe un conjunto de diseños, se realiza un *.map* y se presentan los diseños a través de unas tarjetas. Estas tarjetas son un elemento común que al hacer click sobre ellas desplegará un **modal** importado de react-bootstrap para mostrar en detalle el diseño.
+
+
+
+
+
+
 
 Se accede a la aplicación a través de la vista "Home", que inicialmente realiza una petición a la base de datos de todos los automóviles que constan en ella y nos los presenta en tarjetas. En el encabezado encontramos un input que nos permite hacer *búsquedas* de conjuntos de automóviles en función de la coincidencia del script introducido con sus marcas y/o modelos, aplicando un *debounce vanilla* para no realizar una búsqueda de cada letra. Además al hacer click sobre alguna tarjeta concreta, los datos del vehículo correspondiente se inscriben en *Redux*, se ejecuta el *método navigate* para cargar la vista "Showcar" en el body y se imprimen los datos del automóvil cargado en Redux en esta nueva vista.
 
@@ -92,8 +108,6 @@ En la vista "Userslist" encontramos los datos del conjunto de los usuarios prese
 
 ### Errores conocidos
 
-En la vista showcar desaparecen los datos del coche seleccionado de la tarjeta si se introduce algo en el input de búsqueda del header.
-
 Si para iniciar sesión introducimos unas credenciales incorrectas no indica nada, simplemente no se inicia sesión.
 
 ### Recursos alternativos y fuentes
@@ -103,5 +117,3 @@ https://tutorialmarkdown.com/emojis
 https://badges.pages.dev/
 
 https://imgbb.com/
-
-https://www.deviantart.com/yllivula/art/Car-Rental-Logo-781819442
