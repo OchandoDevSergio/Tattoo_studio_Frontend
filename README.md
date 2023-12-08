@@ -21,6 +21,8 @@ Correo: cemogi@mail.com  Contraseña: Cc1234
 
 - [Descripción general del proyecto :speech_balloon:](#descripción-general-del-proyecto)
 
+- [Modo de empleo :on:](#modo-de-empleo)
+
 - [Vistas :computer:](#vistas) 
 
 - [Funcionamiento :arrow_forward:](#funcionamiento)
@@ -35,6 +37,46 @@ Correo: cemogi@mail.com  Contraseña: Cc1234
 
 Propuesto el proyecto de desarrollar una aplicación web para la gestión de un estudio de tatuaje, el presente repositorio supone la sección frontend del mismo. Esta sección habría de constar de una *SPA* (single page application), en la que los usuarios puedan: ver diseños de tatuajes realizados por los artistas del estudio y gestionar sus datos, su perfil y sus citas. Donde los artistas puedan gestionar el portfolio con sus diseños que se muestra y ver las citas que tienen concertadas. Por último donde los administradores puedan gestionar citas y añadir artistas. 
 Además la aplicación habría de distinguir, con el inicio de sesión, entre un *rol de usuario* cliente, otro de artista y también un rol de administrador; mostrando diferencias en las vistas de la aplicación y permitiendo además en función de esta distinción realizar diferentes cambios en la base de datos.
+
+### Modo de empleo
+
+Pasos para lanzar la aplicación:
+
+1- Generar una base de datos SQL con el nombre "tattoo_studio_backend" con la ayuda de algún administrador de bases de datos tipo MySQL Workbench. Importante tener en cuenta que los datos en el archivo config.json de la API (los datos con los que por defecto va a tratar de enlazar con esa base de datos) son:
+
+  "development": {
+    "username": "root",
+    "password": "1234",
+    "database": "tattoo_studio_backend",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+
+Estos datos se habrían de cambiar por los que correspondan en su administrador de bases de datos antes de proseguir con los siguientes pasos.
+
+2- Abre el repositorio de la API con el editor de código y ejecuta los siguientes comandos por la terminal:
+
+npm install --save-dev sequelize-cli
+En caso de no tenerlo ya instalado.
+
+sequelize-cli db:migrate
+
+sequelize-cli db:seed:all
+
+Adjunto link con la documentación relativa a este paso :
+https://sequelize.org/docs/v6/other-topics/migrations/
+
+3- Se ejecuta el siguiente comando para levantar el servidor de la API:
+
+npm start
+
+4- Se abre el repositorio del cliente con el editor de código y se ejecuta el siguiente comando en el terminal:
+
+npm run dev
+
+5- Se accede a través del buscador a la URL:
+
+http://localhost:5173/
 
 ### Vistas
 
